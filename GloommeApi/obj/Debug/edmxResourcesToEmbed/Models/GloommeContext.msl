@@ -1,0 +1,3004 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SocialNetworkModelStoreContainer" CdmEntityContainer="SocialNetworkEntities2">
+    <EntitySetMapping Name="SN_Areas">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Areas">
+        <MappingFragment StoreEntitySet="SN_Areas">
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="AreaImageURL" ColumnName="AreaImageURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Category">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Category">
+        <MappingFragment StoreEntitySet="SN_Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CategoryImageURL" ColumnName="CategoryImageURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Category">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="SocialNetworkModel.Store.SN_Category_Insert">
+            <ScalarProperty Name="CategoryImageURL" ParameterName="CategoryImageURL" />
+            <ScalarProperty Name="IsActive" ParameterName="IsActive" />
+            <ScalarProperty Name="CreatedBy" ParameterName="CreatedBy" />
+            <ScalarProperty Name="CategoryName" ParameterName="CategoryName" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="SocialNetworkModel.Store.SN_Category_Update">
+            <ScalarProperty Name="CategoryImageURL" ParameterName="CategoryImageURL" Version="Current" />
+            <ScalarProperty Name="IsActive" ParameterName="IsActive" Version="Current" />
+            <ScalarProperty Name="CategoryName" ParameterName="CategoryName" Version="Current" />
+            <ScalarProperty Name="CategoryID" ParameterName="CategoryID" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="SocialNetworkModel.Store.SN_Delete_Category">
+            <ScalarProperty Name="CategoryID" ParameterName="CategoryID" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ChartMessages">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ChartMessages">
+        <MappingFragment StoreEntitySet="SN_ChartMessages">
+          <ScalarProperty Name="ChartMessageID" ColumnName="ChartMessageID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="MessageToID" ColumnName="MessageToID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Commision">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Commision">
+        <MappingFragment StoreEntitySet="SN_Commision">
+          <ScalarProperty Name="CommissionID" ColumnName="CommissionID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_CustomerJobs">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_CustomerJobs">
+        <MappingFragment StoreEntitySet="SN_CustomerJobs">
+          <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PostMessage" ColumnName="PostMessage" />
+          <ScalarProperty Name="TimeLineInHours" ColumnName="TimeLineInHours" />
+          <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
+          <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Customers">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Customers">
+        <MappingFragment StoreEntitySet="SN_Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Midllename" ColumnName="Midllename" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="CustomerActive" ColumnName="CustomerActive" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_CustomerWallet">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_CustomerWallet">
+        <MappingFragment StoreEntitySet="SN_CustomerWallet">
+          <ScalarProperty Name="CustomerWalleID" ColumnName="CustomerWalleID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Dispute">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Dispute">
+        <MappingFragment StoreEntitySet="SN_Dispute">
+          <ScalarProperty Name="DisputeID" ColumnName="DisputeID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DisputeMessage" ColumnName="DisputeMessage" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderResponse" ColumnName="ProviderResponse" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateResponded" ColumnName="DateResponded" />
+          <ScalarProperty Name="IsAdminApproved" ColumnName="IsAdminApproved" />
+          <ScalarProperty Name="IsTime" ColumnName="IsTime" />
+          <ScalarProperty Name="IsJobSatisfaction" ColumnName="IsJobSatisfaction" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="JobCompletionRating" ColumnName="JobCompletionRating" />
+          <ScalarProperty Name="ApprovedRating" ColumnName="ApprovedRating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Invitation">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Invitation">
+        <MappingFragment StoreEntitySet="SN_Invitation">
+          <ScalarProperty Name="InvitationID" ColumnName="InvitationID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="InvitedBy" ColumnName="InvitedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Invoices">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Invoices">
+        <MappingFragment StoreEntitySet="SN_Invoices">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Jobs">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Jobs">
+        <MappingFragment StoreEntitySet="SN_Jobs">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+          <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+          <ScalarProperty Name="ProviderComment" ColumnName="ProviderComment" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="IsCustomerComplete" ColumnName="IsCustomerComplete" />
+          <ScalarProperty Name="DateCustomerComplete" ColumnName="DateCustomerComplete" />
+          <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Messages">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Messages">
+        <MappingFragment StoreEntitySet="SN_Messages">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsReade" ColumnName="IsReade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Payments">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Payments">
+        <MappingFragment StoreEntitySet="SN_Payments">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PaymentDescription" ColumnName="PaymentDescription" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_PostComments">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_PostComments">
+        <MappingFragment StoreEntitySet="SN_PostComments">
+          <ScalarProperty Name="PostCommentID" ColumnName="PostCommentID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Proposals">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Proposals">
+        <MappingFragment StoreEntitySet="SN_Proposals">
+          <ScalarProperty Name="ProposalID" ColumnName="ProposalID" />
+          <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProposedTimeLine" ColumnName="ProposedTimeLine" />
+          <ScalarProperty Name="ProposedAmount" ColumnName="ProposedAmount" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DateaCreated" ColumnName="DateaCreated" />
+          <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+          <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderAreas">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderAreas">
+        <MappingFragment StoreEntitySet="SN_ProviderAreas">
+          <ScalarProperty Name="ProviderAreaID" ColumnName="ProviderAreaID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderBanks">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderBanks">
+        <MappingFragment StoreEntitySet="SN_ProviderBanks">
+          <ScalarProperty Name="ProviderBankID" ColumnName="ProviderBankID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderBanks">
+        <ModificationFunctionMapping>
+          <DeleteFunction FunctionName="SocialNetworkModel.Store.SN_Delete_ProviderBanks">
+            <ScalarProperty Name="ProviderBankID" ParameterName="ProviderBankID" />
+          </DeleteFunction>
+          <InsertFunction FunctionName="SocialNetworkModel.Store.SN_ProviderBanks_Insert">
+            <ScalarProperty Name="AccountName" ParameterName="AccountName" />
+            <ScalarProperty Name="SortCode" ParameterName="SortCode" />
+            <ScalarProperty Name="AccountNo" ParameterName="AccountNo" />
+            <ScalarProperty Name="BankID" ParameterName="BankID" />
+            <ScalarProperty Name="ProviderID" ParameterName="ProviderID" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="SocialNetworkModel.Store.SN_ProviderBanks_Update">
+            <ScalarProperty Name="AccountName" ParameterName="AccountName" Version="Current" />
+            <ScalarProperty Name="SortCode" ParameterName="SortCode" Version="Current" />
+            <ScalarProperty Name="AccountNo" ParameterName="AccountNo" Version="Current" />
+            <ScalarProperty Name="BankID" ParameterName="BankID" Version="Current" />
+            <ScalarProperty Name="ProviderBankID" ParameterName="ProviderBankID" Version="Current" />
+          </UpdateFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderCategory">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderCategory">
+        <MappingFragment StoreEntitySet="SN_ProviderCategory">
+          <ScalarProperty Name="ProviderCategoryID" ColumnName="ProviderCategoryID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderCertification">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderCertification">
+        <MappingFragment StoreEntitySet="SN_ProviderCertification">
+          <ScalarProperty Name="ProviderCertificationID" ColumnName="ProviderCertificationID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CertificationName" ColumnName="CertificationName" />
+          <ScalarProperty Name="YearAchived" ColumnName="YearAchived" />
+          <ScalarProperty Name="CertificationProvider" ColumnName="CertificationProvider" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderCertification">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="SocialNetworkModel.Store.SN_ProviderCertification_Insert">
+            <ScalarProperty Name="CertificationProvider" ParameterName="CertificationProvider" />
+            <ScalarProperty Name="YearAchived" ParameterName="YearAchived" />
+            <ScalarProperty Name="CertificationName" ParameterName="CertificationName" />
+            <ScalarProperty Name="ProviderID" ParameterName="ProviderID" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="SocialNetworkModel.Store.SN_ProviderCertification_Update">
+            <ScalarProperty Name="CertificationProvider" ParameterName="CertificationProvider" Version="Current" />
+            <ScalarProperty Name="YearAchived" ParameterName="YearAchived" Version="Current" />
+            <ScalarProperty Name="CertificationName" ParameterName="CertificationName" Version="Current" />
+            <ScalarProperty Name="ProviderCertificationID" ParameterName="ProviderCertificationID" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="SocialNetworkModel.Store.SN_Delete_ProviderCertification">
+            <ScalarProperty Name="ProviderCertificationID" ParameterName="ProviderCertificationID" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderDocuments">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderDocuments">
+        <MappingFragment StoreEntitySet="SN_ProviderDocuments">
+          <ScalarProperty Name="ProviderDocumentID" ColumnName="ProviderDocumentID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="DocumentDescription" ColumnName="DocumentDescription" />
+          <ScalarProperty Name="DocumentURL" ColumnName="DocumentURL" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderEducation">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderEducation">
+        <MappingFragment StoreEntitySet="SN_ProviderEducation">
+          <ScalarProperty Name="ProviderEducationID" ColumnName="ProviderEducationID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+          <ScalarProperty Name="YearObtained" ColumnName="YearObtained" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderJobs">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderJobs">
+        <MappingFragment StoreEntitySet="SN_ProviderJobs">
+          <ScalarProperty Name="ProviderJobID" ColumnName="ProviderJobID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderKeyWords">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderKeyWords">
+        <MappingFragment StoreEntitySet="SN_ProviderKeyWords">
+          <ScalarProperty Name="ProviderKeyWordID" ColumnName="ProviderKeyWordID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="KeyWord" ColumnName="KeyWord" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderKeyWords">
+        <ModificationFunctionMapping>
+          <DeleteFunction FunctionName="SocialNetworkModel.Store.SN_Delete_ProviderKeyWords">
+            <ScalarProperty Name="ProviderKeyWordID" ParameterName="ProviderKeyWordID" />
+          </DeleteFunction>
+          <InsertFunction FunctionName="SocialNetworkModel.Store.SN_ProviderKeyWords_Insert">
+            <ScalarProperty Name="KeyWord" ParameterName="KeyWord" />
+            <ScalarProperty Name="ProviderID" ParameterName="ProviderID" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="SocialNetworkModel.Store.SN_ProviderKeyWords_Update">
+            <ScalarProperty Name="KeyWord" ParameterName="KeyWord" Version="Current" />
+            <ScalarProperty Name="ProviderKeyWordID" ParameterName="ProviderKeyWordID" Version="Current" />
+          </UpdateFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderPackages">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderPackages">
+        <MappingFragment StoreEntitySet="SN_ProviderPackages">
+          <ScalarProperty Name="ProviderPackageID" ColumnName="ProviderPackageID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+          <ScalarProperty Name="Timeline" ColumnName="Timeline" />
+          <ScalarProperty Name="TimelineType" ColumnName="TimelineType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderPackages">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="SocialNetworkModel.Store.SN_ProviderPackages_Insert">
+            <ScalarProperty Name="IsActive" ParameterName="IsActive" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" />
+            <ScalarProperty Name="TimelineType" ParameterName="TimelineType" />
+            <ScalarProperty Name="Timeline" ParameterName="Timeline" />
+            <ScalarProperty Name="PackageDescription" ParameterName="PackageDescription" />
+            <ScalarProperty Name="PackageName" ParameterName="PackageName" />
+            <ScalarProperty Name="CategoryID" ParameterName="CategoryID" />
+            <ScalarProperty Name="AreaID" ParameterName="AreaID" />
+            <ScalarProperty Name="ProviderID" ParameterName="ProviderID" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="SocialNetworkModel.Store.SN_ProviderPackages_Update">
+            <ScalarProperty Name="IsActive" ParameterName="IsActive" Version="Current" />
+            <ScalarProperty Name="DateCreated" ParameterName="DateCreated" Version="Current" />
+            <ScalarProperty Name="Amount" ParameterName="Amount" Version="Current" />
+            <ScalarProperty Name="TimelineType" ParameterName="TimelineType" Version="Current" />
+            <ScalarProperty Name="Timeline" ParameterName="Timeline" Version="Current" />
+            <ScalarProperty Name="PackageDescription" ParameterName="PackageDescription" Version="Current" />
+            <ScalarProperty Name="PackageName" ParameterName="PackageName" Version="Current" />
+            <ScalarProperty Name="CategoryID" ParameterName="CategoryID" Version="Current" />
+            <ScalarProperty Name="AreaID" ParameterName="AreaID" Version="Current" />
+            <ScalarProperty Name="ProviderID" ParameterName="ProviderID" Version="Current" />
+            <ScalarProperty Name="ProviderPackageID" ParameterName="ProviderPackageID" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="SocialNetworkModel.Store.SN_Delete_ProviderPackages">
+            <ScalarProperty Name="ProviderPackageID" ParameterName="ProviderPackageID" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderPictures">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderPictures">
+        <MappingFragment StoreEntitySet="SN_ProviderPictures">
+          <ScalarProperty Name="ProviderPictureID" ColumnName="ProviderPictureID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="PictureDescription" ColumnName="PictureDescription" />
+          <ScalarProperty Name="PictureURL" ColumnName="PictureURL" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderRating">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderRating">
+        <MappingFragment StoreEntitySet="SN_ProviderRating">
+          <ScalarProperty Name="ProviderRating" ColumnName="ProviderRating" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="RatingScore" ColumnName="RatingScore" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderReceipt">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderReceipt">
+        <MappingFragment StoreEntitySet="SN_ProviderReceipt">
+          <ScalarProperty Name="ProviderReceiptID" ColumnName="ProviderReceiptID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DateReceived" ColumnName="DateReceived" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Providers">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Providers">
+        <MappingFragment StoreEntitySet="SN_Providers">
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ProviderAddress" ColumnName="ProviderAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="ProviderPassword" ColumnName="ProviderPassword" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderTypes">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderTypes">
+        <MappingFragment StoreEntitySet="SN_ProviderTypes">
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_ProviderVideo">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderVideo">
+        <MappingFragment StoreEntitySet="SN_ProviderVideo">
+          <ScalarProperty Name="ProviderVideoID" ColumnName="ProviderVideoID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="VideoDescription" ColumnName="VideoDescription" />
+          <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Settlement">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Settlement">
+        <MappingFragment StoreEntitySet="SN_Settlement">
+          <ScalarProperty Name="SettlementID" ColumnName="SettlementID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderAmount" ColumnName="ProviderAmount" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="Commission" ColumnName="Commission" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Skills">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Skills">
+        <MappingFragment StoreEntitySet="SN_Skills">
+          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+          <ScalarProperty Name="SkillDescription" ColumnName="SkillDescription" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Skills">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="SocialNetworkModel.Store.SN_Skills_Insert">
+            <ScalarProperty Name="SkillDescription" ParameterName="SkillDescription" />
+            <ScalarProperty Name="SkillName" ParameterName="SkillName" />
+            <ScalarProperty Name="AreaID" ParameterName="AreaID" />
+            <ScalarProperty Name="ProviderID" ParameterName="ProviderID" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="SocialNetworkModel.Store.SN_Skills_Update">
+            <ScalarProperty Name="SkillDescription" ParameterName="SkillDescription" Version="Current" />
+            <ScalarProperty Name="SkillName" ParameterName="SkillName" Version="Current" />
+            <ScalarProperty Name="AreaID" ParameterName="AreaID" Version="Current" />
+            <ScalarProperty Name="SkillID" ParameterName="SkillID" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="SocialNetworkModel.Store.SN_Delete_Skills">
+            <ScalarProperty Name="SkillID" ParameterName="SkillID" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Social">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Social">
+        <MappingFragment StoreEntitySet="SN_Social">
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="SocialPassword" ColumnName="SocialPassword" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SocialType" ColumnName="SocialType" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_SocialEducation">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_SocialEducation">
+        <MappingFragment StoreEntitySet="SN_SocialEducation">
+          <ScalarProperty Name="SocialEducationID" ColumnName="SocialEducationID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="YearFrom" ColumnName="YearFrom" />
+          <ScalarProperty Name="YearTo" ColumnName="YearTo" />
+          <ScalarProperty Name="DegreeObtained" ColumnName="DegreeObtained" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_SocialEmployements">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_SocialEmployements">
+        <MappingFragment StoreEntitySet="SN_SocialEmployements">
+          <ScalarProperty Name="SocialJobID" ColumnName="SocialJobID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="YearEmployed" ColumnName="YearEmployed" />
+          <ScalarProperty Name="YearLeft" ColumnName="YearLeft" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_SocialFriends">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_SocialFriends">
+        <MappingFragment StoreEntitySet="SN_SocialFriends">
+          <ScalarProperty Name="SocialFriendID" ColumnName="SocialFriendID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="FriendID" ColumnName="FriendID" />
+          <ScalarProperty Name="DateRequested" ColumnName="DateRequested" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="InvitationID" ColumnName="InvitationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_SocialPosts">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_SocialPosts">
+        <MappingFragment StoreEntitySet="SN_SocialPosts">
+          <ScalarProperty Name="SocialPostID" ColumnName="SocialPostID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="MessageFileURL" ColumnName="MessageFileURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_Subscription">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Subscription">
+        <MappingFragment StoreEntitySet="SN_Subscription">
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_SubscriptionInvoice">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_SubscriptionInvoice">
+        <MappingFragment StoreEntitySet="SN_SubscriptionInvoice">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_SubscriptionPayment">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_SubscriptionPayment">
+        <MappingFragment StoreEntitySet="SN_SubscriptionPayment">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_Banks">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_Banks">
+        <MappingFragment StoreEntitySet="SYS_Banks">
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_Company">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_Company">
+        <MappingFragment StoreEntitySet="SYS_Company">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="JobRate" ColumnName="JobRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_Country">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_Country">
+        <MappingFragment StoreEntitySet="SYS_Country">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_Degrees">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_Degrees">
+        <MappingFragment StoreEntitySet="SYS_Degrees">
+          <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_Roles">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_Roles">
+        <MappingFragment StoreEntitySet="SYS_Roles">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_Users">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_Users">
+        <MappingFragment StoreEntitySet="SYS_Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_SocialLogs">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_SocialLogs">
+        <MappingFragment StoreEntitySet="SN_SocialLogs">
+          <ScalarProperty Name="SocialLogID" ColumnName="SocialLogID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_AccountType">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_AccountType">
+        <MappingFragment StoreEntitySet="SYS_AccountType">
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ProviderPictures_Fetch" FunctionName="SocialNetworkModel.Store.ProviderPictures_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.ProviderPictures_Fetch_Result">
+          <ScalarProperty Name="ProviderPictureID" ColumnName="ProviderPictureID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="PictureDescription" ColumnName="PictureDescription" />
+          <ScalarProperty Name="PictureURL" ColumnName="PictureURL" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Areas_Fetch" FunctionName="SocialNetworkModel.Store.SN_Areas_Fetch" />
+    <FunctionImportMapping FunctionImportName="SN_Areas_FetchByCategoryID" FunctionName="SocialNetworkModel.Store.SN_Areas_FetchByCategoryID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Areas_FetchByCategoryID_Result">
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AreaImageURL" ColumnName="AreaImageURL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Areas_FetchByName" FunctionName="SocialNetworkModel.Store.SN_Areas_FetchByName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Areas_FetchByName_Result">
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AreaImageURL" ColumnName="AreaImageURL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Areas_FetchName" FunctionName="SocialNetworkModel.Store.SN_Areas_FetchName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Areas_FetchName_Result">
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AreaImageURL" ColumnName="AreaImageURL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Category_Fetch" FunctionName="SocialNetworkModel.Store.SN_Category_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Category_Fetch_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CategoryImageURL" ColumnName="CategoryImageURL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ChartMessages_Fetch" FunctionName="SocialNetworkModel.Store.SN_ChartMessages_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ChartMessages_Fetch_Result">
+          <ScalarProperty Name="ChartMessageID" ColumnName="ChartMessageID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="MessageToID" ColumnName="MessageToID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ChartMessages_FetchByInterval" FunctionName="SocialNetworkModel.Store.SN_ChartMessages_FetchByInterval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ChartMessages_FetchByInterval_Result">
+          <ScalarProperty Name="ChartMessageID" ColumnName="ChartMessageID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="MessageToID" ColumnName="MessageToID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_CustomerJobs_Fetch" FunctionName="SocialNetworkModel.Store.SN_CustomerJobs_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_CustomerJobs_Fetch_Result">
+          <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PostMessage" ColumnName="PostMessage" />
+          <ScalarProperty Name="TimeLineInHours" ColumnName="TimeLineInHours" />
+          <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
+          <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Midllename" ColumnName="Midllename" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_CustomerJobs_FetchActive" FunctionName="SocialNetworkModel.Store.SN_CustomerJobs_FetchActive">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_CustomerJobs_FetchActive_Result">
+          <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PostMessage" ColumnName="PostMessage" />
+          <ScalarProperty Name="TimeLineInHours" ColumnName="TimeLineInHours" />
+          <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
+          <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Midllename" ColumnName="Midllename" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_CustomerJobs_FetchByCustomerID" FunctionName="SocialNetworkModel.Store.SN_CustomerJobs_FetchByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_CustomerJobs_FetchByCustomerID_Result">
+          <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PostMessage" ColumnName="PostMessage" />
+          <ScalarProperty Name="TimeLineInHours" ColumnName="TimeLineInHours" />
+          <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
+          <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Midllename" ColumnName="Midllename" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Customers_Fetch" FunctionName="SocialNetworkModel.Store.SN_Customers_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Customers_Fetch_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Midllename" ColumnName="Midllename" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="CustomerActive" ColumnName="CustomerActive" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Customers_FetchCustomerByEmail" FunctionName="SocialNetworkModel.Store.SN_Customers_FetchCustomerByEmail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Customers_FetchCustomerByEmail_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Midllename" ColumnName="Midllename" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="CustomerActive" ColumnName="CustomerActive" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Customers_FetchCustomerByPassword" FunctionName="SocialNetworkModel.Store.SN_Customers_FetchCustomerByPassword">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Customers_FetchCustomerByPassword_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Midllename" ColumnName="Midllename" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="CustomerActive" ColumnName="CustomerActive" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_CustomerWallet_FetchByCustomerID" FunctionName="SocialNetworkModel.Store.SN_CustomerWallet_FetchByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_CustomerWallet_FetchByCustomerID_Result">
+          <ScalarProperty Name="CustomerWalleID" ColumnName="CustomerWalleID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_CustomerWallet_FetchSummary" FunctionName="SocialNetworkModel.Store.SN_CustomerWallet_FetchSummary" />
+    <FunctionImportMapping FunctionImportName="SN_Dispute_Fetch" FunctionName="SocialNetworkModel.Store.SN_Dispute_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Dispute_Fetch_Result">
+          <ScalarProperty Name="DisputeID" ColumnName="DisputeID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DisputeMessage" ColumnName="DisputeMessage" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProviderResponse" ColumnName="ProviderResponse" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateResponded" ColumnName="DateResponded" />
+          <ScalarProperty Name="IsAdminApproved" ColumnName="IsAdminApproved" />
+          <ScalarProperty Name="IsTime" ColumnName="IsTime" />
+          <ScalarProperty Name="IsJobSatisfaction" ColumnName="IsJobSatisfaction" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="JobCompletionRating" ColumnName="JobCompletionRating" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Dispute_FetchByCustomerID" FunctionName="SocialNetworkModel.Store.SN_Dispute_FetchByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Dispute_FetchByCustomerID_Result">
+          <ScalarProperty Name="DisputeID" ColumnName="DisputeID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DisputeMessage" ColumnName="DisputeMessage" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProviderResponse" ColumnName="ProviderResponse" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateResponded" ColumnName="DateResponded" />
+          <ScalarProperty Name="IsAdminApproved" ColumnName="IsAdminApproved" />
+          <ScalarProperty Name="IsTime" ColumnName="IsTime" />
+          <ScalarProperty Name="IsJobSatisfaction" ColumnName="IsJobSatisfaction" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="JobCompletionRating" ColumnName="JobCompletionRating" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Dispute_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_Dispute_FetchByProviderID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Dispute_FetchByProviderID_Result">
+          <ScalarProperty Name="DisputeID" ColumnName="DisputeID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DisputeMessage" ColumnName="DisputeMessage" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProviderResponse" ColumnName="ProviderResponse" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateResponded" ColumnName="DateResponded" />
+          <ScalarProperty Name="IsAdminApproved" ColumnName="IsAdminApproved" />
+          <ScalarProperty Name="IsTime" ColumnName="IsTime" />
+          <ScalarProperty Name="IsJobSatisfaction" ColumnName="IsJobSatisfaction" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="JobCompletionRating" ColumnName="JobCompletionRating" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Friends_FetchPendingReqeust" FunctionName="SocialNetworkModel.Store.SN_Friends_FetchPendingReqeust">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Friends_FetchPendingReqeust_Result">
+          <ScalarProperty Name="SocialFriendID" ColumnName="SocialFriendID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="FriendID" ColumnName="FriendID" />
+          <ScalarProperty Name="DateRequested" ColumnName="DateRequested" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="InvitationID" ColumnName="InvitationID" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_GetSocialID" FunctionName="SocialNetworkModel.Store.SN_GetSocialID" />
+    <FunctionImportMapping FunctionImportName="SN_Invitation_Fetch" FunctionName="SocialNetworkModel.Store.SN_Invitation_Fetch" />
+    <FunctionImportMapping FunctionImportName="SN_Invoices_Fetch" FunctionName="SocialNetworkModel.Store.SN_Invoices_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Invoices_Fetch_Result">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Invoices_FetchByCustomerID" FunctionName="SocialNetworkModel.Store.SN_Invoices_FetchByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Invoices_FetchByCustomerID_Result">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Jobs_Fetch" FunctionName="SocialNetworkModel.Store.SN_Jobs_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Jobs_Fetch_Result">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+          <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+          <ScalarProperty Name="ProviderComment" ColumnName="ProviderComment" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="IsCustomerComplete" ColumnName="IsCustomerComplete" />
+          <ScalarProperty Name="DateCustomerComplete" ColumnName="DateCustomerComplete" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Jobs_FetchByCustomerID" FunctionName="SocialNetworkModel.Store.SN_Jobs_FetchByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Jobs_FetchByCustomerID_Result">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+          <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+          <ScalarProperty Name="ProviderComment" ColumnName="ProviderComment" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="IsCustomerComplete" ColumnName="IsCustomerComplete" />
+          <ScalarProperty Name="DateCustomerComplete" ColumnName="DateCustomerComplete" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Jobs_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_Jobs_FetchByProviderID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Jobs_FetchByProviderID_Result">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+          <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+          <ScalarProperty Name="ProviderComment" ColumnName="ProviderComment" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="IsCustomerComplete" ColumnName="IsCustomerComplete" />
+          <ScalarProperty Name="DateCustomerComplete" ColumnName="DateCustomerComplete" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Messages_Fetch" FunctionName="SocialNetworkModel.Store.SN_Messages_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Messages_Fetch_Result">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsReade" ColumnName="IsReade" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Messages_FetchByCustomerID" FunctionName="SocialNetworkModel.Store.SN_Messages_FetchByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Messages_FetchByCustomerID_Result">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsReade" ColumnName="IsReade" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Messages_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_Messages_FetchByProviderID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Messages_FetchByProviderID_Result">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsReade" ColumnName="IsReade" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Payments_Fetch" FunctionName="SocialNetworkModel.Store.SN_Payments_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Payments_Fetch_Result">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentDescription" ColumnName="PaymentDescription" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Payments_FetchByCustomerID" FunctionName="SocialNetworkModel.Store.SN_Payments_FetchByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Payments_FetchByCustomerID_Result">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentDescription" ColumnName="PaymentDescription" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_PostComments_Fetch" FunctionName="SocialNetworkModel.Store.SN_PostComments_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_PostComments_Fetch_Result">
+          <ScalarProperty Name="PostCommentID" ColumnName="PostCommentID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SocialPostID" ColumnName="SocialPostID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_PostComments_FetchByPostID" FunctionName="SocialNetworkModel.Store.SN_PostComments_FetchByPostID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_PostComments_FetchByPostID_Result">
+          <ScalarProperty Name="PostCommentID" ColumnName="PostCommentID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SocialPostID" ColumnName="SocialPostID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Proposals_Fetch" FunctionName="SocialNetworkModel.Store.SN_Proposals_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Proposals_Fetch_Result">
+          <ScalarProperty Name="ProposalID" ColumnName="ProposalID" />
+          <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProposedTimeLine" ColumnName="ProposedTimeLine" />
+          <ScalarProperty Name="ProposedAmount" ColumnName="ProposedAmount" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DateaCreated" ColumnName="DateaCreated" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PostMessage" ColumnName="PostMessage" />
+          <ScalarProperty Name="TimeLineInHours" ColumnName="TimeLineInHours" />
+          <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
+          <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Proposals_FetchByCustomerID" FunctionName="SocialNetworkModel.Store.SN_Proposals_FetchByCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Proposals_FetchByCustomerID_Result">
+          <ScalarProperty Name="ProposalID" ColumnName="ProposalID" />
+          <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProposedTimeLine" ColumnName="ProposedTimeLine" />
+          <ScalarProperty Name="ProposedAmount" ColumnName="ProposedAmount" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DateaCreated" ColumnName="DateaCreated" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PostMessage" ColumnName="PostMessage" />
+          <ScalarProperty Name="TimeLineInHours" ColumnName="TimeLineInHours" />
+          <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
+          <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Proposals_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_Proposals_FetchByProviderID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Proposals_FetchByProviderID_Result">
+          <ScalarProperty Name="ProposalID" ColumnName="ProposalID" />
+          <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProposedTimeLine" ColumnName="ProposedTimeLine" />
+          <ScalarProperty Name="ProposedAmount" ColumnName="ProposedAmount" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DateaCreated" ColumnName="DateaCreated" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PostMessage" ColumnName="PostMessage" />
+          <ScalarProperty Name="TimeLineInHours" ColumnName="TimeLineInHours" />
+          <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
+          <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderAreas_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderAreas_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderAreas_Fetch_Result">
+          <ScalarProperty Name="ProviderAreaID" ColumnName="ProviderAreaID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderAreas_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderAreas_FetchByProviderID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderAreas_FetchByProviderID_Result">
+          <ScalarProperty Name="ProviderAreaID" ColumnName="ProviderAreaID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderAreas_FetchByProviderIDAndCategoryID" FunctionName="SocialNetworkModel.Store.SN_ProviderAreas_FetchByProviderIDAndCategoryID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderAreas_FetchByProviderIDAndCategoryID_Result">
+          <ScalarProperty Name="ProviderAreaID" ColumnName="ProviderAreaID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderBanks_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderBanks_Fetch" />
+    <FunctionImportMapping FunctionImportName="SN_ProviderBanks_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderBanks_FetchByProviderID" />
+    <FunctionImportMapping FunctionImportName="SN_ProviderCategory_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderCategory_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderCategory_Fetch_Result">
+          <ScalarProperty Name="ProviderCategoryID" ColumnName="ProviderCategoryID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderCategory_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderCategory_FetchByProviderID" />
+    <FunctionImportMapping FunctionImportName="SN_ProviderCertification_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderCertification_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderCertification_Fetch_Result">
+          <ScalarProperty Name="ProviderCertificationID" ColumnName="ProviderCertificationID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CertificationName" ColumnName="CertificationName" />
+          <ScalarProperty Name="YearAchived" ColumnName="YearAchived" />
+          <ScalarProperty Name="CertificationProvider" ColumnName="CertificationProvider" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderCertification_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderCertification_FetchByProviderID" />
+    <FunctionImportMapping FunctionImportName="SN_ProviderDocuments_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderDocuments_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderDocuments_Fetch_Result">
+          <ScalarProperty Name="ProviderDocumentID" ColumnName="ProviderDocumentID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="DocumentDescription" ColumnName="DocumentDescription" />
+          <ScalarProperty Name="DocumentURL" ColumnName="DocumentURL" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderDocuments_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderDocuments_FetchByProviderID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderDocuments_FetchByProviderID_Result">
+          <ScalarProperty Name="ProviderDocumentID" ColumnName="ProviderDocumentID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="DocumentDescription" ColumnName="DocumentDescription" />
+          <ScalarProperty Name="DocumentURL" ColumnName="DocumentURL" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderEducation_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderEducation_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderEducation_Fetch_Result">
+          <ScalarProperty Name="ProviderEducationID" ColumnName="ProviderEducationID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="YearObtained" ColumnName="YearObtained" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderEducation_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderEducation_FetchByProviderID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderEducation_FetchByProviderID_Result">
+          <ScalarProperty Name="ProviderEducationID" ColumnName="ProviderEducationID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="YearObtained" ColumnName="YearObtained" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderJobs_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderJobs_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderJobs_Fetch_Result">
+          <ScalarProperty Name="ProviderJobID" ColumnName="ProviderJobID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderKeyWords_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderKeyWords_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderKeyWords_Fetch_Result">
+          <ScalarProperty Name="ProviderKeyWordID" ColumnName="ProviderKeyWordID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="KeyWord" ColumnName="KeyWord" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderKeyWords_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderKeyWords_FetchByProviderID" />
+    <FunctionImportMapping FunctionImportName="SN_ProviderPackages_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderPackages_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderPackages_Fetch_Result">
+          <ScalarProperty Name="ProviderPackageID" ColumnName="ProviderPackageID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+          <ScalarProperty Name="Timeline" ColumnName="Timeline" />
+          <ScalarProperty Name="TimelineType" ColumnName="TimelineType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderPackages_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderPackages_FetchByProviderID" />
+    <FunctionImportMapping FunctionImportName="SN_ProviderPictures_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderPictures_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderPictures_Fetch_Result">
+          <ScalarProperty Name="ProviderPictureID" ColumnName="ProviderPictureID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="PictureDescription" ColumnName="PictureDescription" />
+          <ScalarProperty Name="PictureURL" ColumnName="PictureURL" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderPictures_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderPictures_FetchByProviderID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderPictures_FetchByProviderID_Result">
+          <ScalarProperty Name="ProviderPictureID" ColumnName="ProviderPictureID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="PictureDescription" ColumnName="PictureDescription" />
+          <ScalarProperty Name="PictureURL" ColumnName="PictureURL" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderRating_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderRating_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderRating_Fetch_Result">
+          <ScalarProperty Name="ProviderRating" ColumnName="ProviderRating" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="RatingScore" ColumnName="RatingScore" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sn_providerRating_Summary" FunctionName="SocialNetworkModel.Store.sn_providerRating_Summary" />
+    <FunctionImportMapping FunctionImportName="SN_ProviderReceipt_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderReceipt_FetchByProviderID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderReceipt_FetchByProviderID_Result">
+          <ScalarProperty Name="ProviderReceiptID" ColumnName="ProviderReceiptID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DateReceived" ColumnName="DateReceived" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderReceipt_FetchSummary" FunctionName="SocialNetworkModel.Store.SN_ProviderReceipt_FetchSummary" />
+    <FunctionImportMapping FunctionImportName="SN_Providers_Fetch" FunctionName="SocialNetworkModel.Store.SN_Providers_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Providers_Fetch_Result">
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="ProviderAddress" ColumnName="ProviderAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="ProviderPassword" ColumnName="ProviderPassword" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Providers_FetchByArea" FunctionName="SocialNetworkModel.Store.SN_Providers_FetchByArea">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Providers_FetchByArea_Result">
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="SearchResult" ColumnName="SearchResult" />
+          <ScalarProperty Name="ProviderID1" ColumnName="ProviderID1" />
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Fullname1" ColumnName="Fullname1" />
+          <ScalarProperty Name="ProviderAddress" ColumnName="ProviderAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="ProviderPassword" ColumnName="ProviderPassword" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="KeyWord" ColumnName="KeyWord" />
+          <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+          <ScalarProperty Name="CertificationName" ColumnName="CertificationName" />
+          <ScalarProperty Name="AreaName1" ColumnName="AreaName1" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="CategoryName1" ColumnName="CategoryName1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Providers_FetchByCategory" FunctionName="SocialNetworkModel.Store.SN_Providers_FetchByCategory" />
+    <FunctionImportMapping FunctionImportName="SN_Providers_FetchProfile" FunctionName="SocialNetworkModel.Store.SN_Providers_FetchProfile">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Providers_FetchProfile_Result">
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="ProviderAddress" ColumnName="ProviderAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="ProviderPassword" ColumnName="ProviderPassword" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Providers_FetchProviderByEmail" FunctionName="SocialNetworkModel.Store.SN_Providers_FetchProviderByEmail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Providers_FetchProviderByEmail_Result">
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="ProviderAddress" ColumnName="ProviderAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="ProviderPassword" ColumnName="ProviderPassword" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Providers_FetchProviderByPassword" FunctionName="SocialNetworkModel.Store.SN_Providers_FetchProviderByPassword">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Providers_FetchProviderByPassword_Result">
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="ProviderAddress" ColumnName="ProviderAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="ProviderPassword" ColumnName="ProviderPassword" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Providers_Search" FunctionName="SocialNetworkModel.Store.SN_Providers_Search">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Providers_Search_Result">
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="SearchResult" ColumnName="SearchResult" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderTypes_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderTypes_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderTypes_Fetch_Result">
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderVideo_Fetch" FunctionName="SocialNetworkModel.Store.SN_ProviderVideo_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderVideo_Fetch_Result">
+          <ScalarProperty Name="ProviderVideoID" ColumnName="ProviderVideoID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="VideoDescription" ColumnName="VideoDescription" />
+          <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_ProviderVideo_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderVideo_FetchByProviderID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderVideo_FetchByProviderID_Result">
+          <ScalarProperty Name="ProviderVideoID" ColumnName="ProviderVideoID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="VideoDescription" ColumnName="VideoDescription" />
+          <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Skills_Fetch" FunctionName="SocialNetworkModel.Store.SN_Skills_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Skills_Fetch_Result">
+          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+          <ScalarProperty Name="SkillDescription" ColumnName="SkillDescription" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Skills_FetchByProvider" FunctionName="SocialNetworkModel.Store.SN_Skills_FetchByProvider" />
+    <FunctionImportMapping FunctionImportName="SN_Social_Fetch" FunctionName="SocialNetworkModel.Store.SN_Social_Fetch" />
+    <FunctionImportMapping FunctionImportName="SN_Social_FetchProfilePicture" FunctionName="SocialNetworkModel.Store.SN_Social_FetchProfilePicture">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Social_FetchProfilePicture_Result">
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Social_FetchSearch" FunctionName="SocialNetworkModel.Store.SN_Social_FetchSearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Social_FetchSearch_Result">
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="SocialPassword" ColumnName="SocialPassword" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SocialType" ColumnName="SocialType" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Social_FetchSuggestedFriend" FunctionName="SocialNetworkModel.Store.SN_Social_FetchSuggestedFriend">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Social_FetchSuggestedFriend_Result">
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SocialEducation_Fetch" FunctionName="SocialNetworkModel.Store.SN_SocialEducation_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SocialEducation_Fetch_Result">
+          <ScalarProperty Name="SocialEducationID" ColumnName="SocialEducationID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="YearFrom" ColumnName="YearFrom" />
+          <ScalarProperty Name="YearTo" ColumnName="YearTo" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="DegreeObtained" ColumnName="DegreeObtained" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SocialEducation_FetchBySocialID" FunctionName="SocialNetworkModel.Store.SN_SocialEducation_FetchBySocialID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SocialEducation_FetchBySocialID_Result">
+          <ScalarProperty Name="SocialEducationID" ColumnName="SocialEducationID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="YearFrom" ColumnName="YearFrom" />
+          <ScalarProperty Name="YearTo" ColumnName="YearTo" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="DegreeObtained" ColumnName="DegreeObtained" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SocialEmployements_Fetch" FunctionName="SocialNetworkModel.Store.SN_SocialEmployements_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SocialEmployements_Fetch_Result">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="YearEmployed" ColumnName="YearEmployed" />
+          <ScalarProperty Name="YearLeft" ColumnName="YearLeft" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SocialJobID" ColumnName="SocialJobID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SocialEmployements_FetchBySocialID" FunctionName="SocialNetworkModel.Store.SN_SocialEmployements_FetchBySocialID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SocialEmployements_FetchBySocialID_Result">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="YearEmployed" ColumnName="YearEmployed" />
+          <ScalarProperty Name="YearLeft" ColumnName="YearLeft" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SocialJobID" ColumnName="SocialJobID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SocialFriend_FetchOnlineList" FunctionName="SocialNetworkModel.Store.SN_SocialFriend_FetchOnlineList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SocialFriend_FetchOnlineList_Result">
+          <ScalarProperty Name="FriendName" ColumnName="FriendName" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="FriendID" ColumnName="FriendID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SocialFriends_Fetch" FunctionName="SocialNetworkModel.Store.SN_SocialFriends_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SocialFriends_Fetch_Result">
+          <ScalarProperty Name="SocialFriendID" ColumnName="SocialFriendID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="FriendID" ColumnName="FriendID" />
+          <ScalarProperty Name="DateRequested" ColumnName="DateRequested" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="InvitationID" ColumnName="InvitationID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SocialFriends_FetchBySocialID" FunctionName="SocialNetworkModel.Store.SN_SocialFriends_FetchBySocialID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SocialFriends_FetchBySocialID_Result">
+          <ScalarProperty Name="SocialFriendID" ColumnName="SocialFriendID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="FriendID" ColumnName="FriendID" />
+          <ScalarProperty Name="DateRequested" ColumnName="DateRequested" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="InvitationID" ColumnName="InvitationID" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SocialLogs_FetchMostRecent" FunctionName="SocialNetworkModel.Store.SN_SocialLogs_FetchMostRecent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SocialLogs_FetchMostRecent_Result">
+          <ScalarProperty Name="SocialLogID" ColumnName="SocialLogID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SocialPosts_Fetch" FunctionName="SocialNetworkModel.Store.SN_SocialPosts_Fetch" />
+    <FunctionImportMapping FunctionImportName="SN_SocialPosts_FetchByFriend" FunctionName="SocialNetworkModel.Store.SN_SocialPosts_FetchByFriend">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SocialPosts_FetchByFriend_Result">
+          <ScalarProperty Name="SocialPostID" ColumnName="SocialPostID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="DatePosted" ColumnName="DatePosted" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="MessageFileURL" ColumnName="MessageFileURL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Subscription_Fetch" FunctionName="SocialNetworkModel.Store.SN_Subscription_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Subscription_Fetch_Result">
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_Subscription_FetchActive" FunctionName="SocialNetworkModel.Store.SN_Subscription_FetchActive">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Subscription_FetchActive_Result">
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="IsExisting" ColumnName="IsExisting" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SubscriptionInvoice_Fetch" FunctionName="SocialNetworkModel.Store.SN_SubscriptionInvoice_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SubscriptionInvoice_Fetch_Result">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SN_SubscriptionPayment_Fetch" FunctionName="SocialNetworkModel.Store.SN_SubscriptionPayment_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_SubscriptionPayment_Fetch_Result">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SYS_AccountType_Fetch" FunctionName="SocialNetworkModel.Store.SYS_AccountType_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SYS_AccountType_Fetch_Result">
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SYS_Banks_Fetch" FunctionName="SocialNetworkModel.Store.SYS_Banks_Fetch" />
+    <FunctionImportMapping FunctionImportName="SYS_Company_Fetch" FunctionName="SocialNetworkModel.Store.SYS_Company_Fetch" />
+    <FunctionImportMapping FunctionImportName="SYS_Country_Fetch" FunctionName="SocialNetworkModel.Store.SYS_Country_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SYS_Country_Fetch_Result">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SYS_Degrees_Fetch" FunctionName="SocialNetworkModel.Store.SYS_Degrees_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SYS_Degrees_Fetch_Result">
+          <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SYS_Roles_Fetch" FunctionName="SocialNetworkModel.Store.SYS_Roles_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SYS_Roles_Fetch_Result">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SYS_Users_Fetch" FunctionName="SocialNetworkModel.Store.SYS_Users_Fetch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SYS_Users_Fetch_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="SN_ProviderProfile">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderProfile">
+        <MappingFragment StoreEntitySet="SN_ProviderProfile">
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CertificationName" ColumnName="CertificationName" />
+          <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+          <ScalarProperty Name="KeyWord" ColumnName="KeyWord" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="ProviderPassword" ColumnName="ProviderPassword" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ProviderAddress" ColumnName="ProviderAddress" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_VW_Areas">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_Areas">
+        <MappingFragment StoreEntitySet="SN_VW_Areas">
+          <ScalarProperty Name="AreaImageURL" ColumnName="AreaImageURL" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_Category">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Category">
+        <MappingFragment StoreEntitySet="SN_vw_Category">
+          <ScalarProperty Name="CategoryImageURL" ColumnName="CategoryImageURL" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_ChartMessages">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ChartMessages">
+        <MappingFragment StoreEntitySet="SN_vw_ChartMessages">
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MessageToID" ColumnName="MessageToID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="ChartMessageID" ColumnName="ChartMessageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_CustomerJobs">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_CustomerJobs">
+        <MappingFragment StoreEntitySet="SN_vw_CustomerJobs">
+          <ScalarProperty Name="Midllename" ColumnName="Midllename" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
+          <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
+          <ScalarProperty Name="TimeLineInHours" ColumnName="TimeLineInHours" />
+          <ScalarProperty Name="PostMessage" ColumnName="PostMessage" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_Customers">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Customers">
+        <MappingFragment StoreEntitySet="SN_vw_Customers">
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+          <ScalarProperty Name="CustomerActive" ColumnName="CustomerActive" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CustomerPassword" ColumnName="CustomerPassword" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Midllename" ColumnName="Midllename" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_Dispute">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Dispute">
+        <MappingFragment StoreEntitySet="SN_vw_Dispute">
+          <ScalarProperty Name="JobCompletionRating" ColumnName="JobCompletionRating" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="IsJobSatisfaction" ColumnName="IsJobSatisfaction" />
+          <ScalarProperty Name="IsTime" ColumnName="IsTime" />
+          <ScalarProperty Name="IsAdminApproved" ColumnName="IsAdminApproved" />
+          <ScalarProperty Name="DateResponded" ColumnName="DateResponded" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderResponse" ColumnName="ProviderResponse" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="DisputeMessage" ColumnName="DisputeMessage" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DisputeID" ColumnName="DisputeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_Invoices">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Invoices">
+        <MappingFragment StoreEntitySet="SN_vw_Invoices">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_Jobs">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Jobs">
+        <MappingFragment StoreEntitySet="SN_vw_Jobs">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="DateCustomerComplete" ColumnName="DateCustomerComplete" />
+          <ScalarProperty Name="IsCustomerComplete" ColumnName="IsCustomerComplete" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="ProviderComment" ColumnName="ProviderComment" />
+          <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+          <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_Messages">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Messages">
+        <MappingFragment StoreEntitySet="SN_vw_Messages">
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="IsReade" ColumnName="IsReade" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_VW_Payments">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_Payments">
+        <MappingFragment StoreEntitySet="SN_VW_Payments">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PaymentDescription" ColumnName="PaymentDescription" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_PostComments">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_PostComments">
+        <MappingFragment StoreEntitySet="SN_vw_PostComments">
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="SocialPostID" ColumnName="SocialPostID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="PostCommentID" ColumnName="PostCommentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_Proposals">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Proposals">
+        <MappingFragment StoreEntitySet="SN_vw_Proposals">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
+          <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
+          <ScalarProperty Name="TimeLineInHours" ColumnName="TimeLineInHours" />
+          <ScalarProperty Name="PostMessage" ColumnName="PostMessage" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="DateaCreated" ColumnName="DateaCreated" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ProposedAmount" ColumnName="ProposedAmount" />
+          <ScalarProperty Name="ProposedTimeLine" ColumnName="ProposedTimeLine" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+          <ScalarProperty Name="ProposalID" ColumnName="ProposalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_ProviderAreas">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ProviderAreas">
+        <MappingFragment StoreEntitySet="SN_vw_ProviderAreas">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderAreaID" ColumnName="ProviderAreaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_ProviderBanks">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ProviderBanks">
+        <MappingFragment StoreEntitySet="SN_vw_ProviderBanks">
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="SortCode" ColumnName="SortCode" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderBankID" ColumnName="ProviderBankID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_ProviderCategory">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ProviderCategory">
+        <MappingFragment StoreEntitySet="SN_vw_ProviderCategory">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderCategoryID" ColumnName="ProviderCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_ProviderCertification">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ProviderCertification">
+        <MappingFragment StoreEntitySet="SN_vw_ProviderCertification">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CertificationProvider" ColumnName="CertificationProvider" />
+          <ScalarProperty Name="YearAchived" ColumnName="YearAchived" />
+          <ScalarProperty Name="CertificationName" ColumnName="CertificationName" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderCertificationID" ColumnName="ProviderCertificationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_VW_ProviderDocuments">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_ProviderDocuments">
+        <MappingFragment StoreEntitySet="SN_VW_ProviderDocuments">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DocumentURL" ColumnName="DocumentURL" />
+          <ScalarProperty Name="DocumentDescription" ColumnName="DocumentDescription" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderDocumentID" ColumnName="ProviderDocumentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_ProviderEducation">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ProviderEducation">
+        <MappingFragment StoreEntitySet="SN_vw_ProviderEducation">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="YearObtained" ColumnName="YearObtained" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderEducationID" ColumnName="ProviderEducationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_VW_ProviderJobs">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_ProviderJobs">
+        <MappingFragment StoreEntitySet="SN_VW_ProviderJobs">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderJobID" ColumnName="ProviderJobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_ProviderKeyWords">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ProviderKeyWords">
+        <MappingFragment StoreEntitySet="SN_vw_ProviderKeyWords">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="KeyWord" ColumnName="KeyWord" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderKeyWordID" ColumnName="ProviderKeyWordID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_ProviderPackages">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ProviderPackages">
+        <MappingFragment StoreEntitySet="SN_vw_ProviderPackages">
+          <ScalarProperty Name="ProviderAreaID" ColumnName="ProviderAreaID" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TimelineType" ColumnName="TimelineType" />
+          <ScalarProperty Name="Timeline" ColumnName="Timeline" />
+          <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderPackageID" ColumnName="ProviderPackageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_VW_ProviderPictures">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_ProviderPictures">
+        <MappingFragment StoreEntitySet="SN_VW_ProviderPictures">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="PictureURL" ColumnName="PictureURL" />
+          <ScalarProperty Name="PictureDescription" ColumnName="PictureDescription" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderPictureID" ColumnName="ProviderPictureID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_ProviderProfile">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ProviderProfile">
+        <MappingFragment StoreEntitySet="SN_vw_ProviderProfile">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CertificationName" ColumnName="CertificationName" />
+          <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+          <ScalarProperty Name="KeyWord" ColumnName="KeyWord" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="ProviderPassword" ColumnName="ProviderPassword" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ProviderAddress" ColumnName="ProviderAddress" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_VW_ProviderRating">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_ProviderRating">
+        <MappingFragment StoreEntitySet="SN_VW_ProviderRating">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="RatingScore" ColumnName="RatingScore" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderRating" ColumnName="ProviderRating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_ProviderReceipt">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ProviderReceipt">
+        <MappingFragment StoreEntitySet="SN_vw_ProviderReceipt">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateReceived" ColumnName="DateReceived" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ProviderReceiptID" ColumnName="ProviderReceiptID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_Providers">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Providers">
+        <MappingFragment StoreEntitySet="SN_vw_Providers">
+          <ScalarProperty Name="IsLogin" ColumnName="IsLogin" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="ProviderPassword" ColumnName="ProviderPassword" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ProviderAddress" ColumnName="ProviderAddress" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_VW_ProviderTypes">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_ProviderTypes">
+        <MappingFragment StoreEntitySet="SN_VW_ProviderTypes">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
+          <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_VW_ProviderVideo">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_ProviderVideo">
+        <MappingFragment StoreEntitySet="SN_VW_ProviderVideo">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+          <ScalarProperty Name="VideoDescription" ColumnName="VideoDescription" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderVideoID" ColumnName="ProviderVideoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_VW_ProviderVideos">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_ProviderVideos">
+        <MappingFragment StoreEntitySet="SN_VW_ProviderVideos">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+          <ScalarProperty Name="VideoDescription" ColumnName="VideoDescription" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="ProviderVideoID" ColumnName="ProviderVideoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_Skills">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Skills">
+        <MappingFragment StoreEntitySet="SN_vw_Skills">
+          <ScalarProperty Name="ProviderAreaID" ColumnName="ProviderAreaID" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SkillDescription" ColumnName="SkillDescription" />
+          <ScalarProperty Name="SkillName" ColumnName="SkillName" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_SocialEducation">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_SocialEducation">
+        <MappingFragment StoreEntitySet="SN_vw_SocialEducation">
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="DegreeObtained" ColumnName="DegreeObtained" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="YearTo" ColumnName="YearTo" />
+          <ScalarProperty Name="YearFrom" ColumnName="YearFrom" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="SocialEducationID" ColumnName="SocialEducationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_SocialEmployements">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_SocialEmployements">
+        <MappingFragment StoreEntitySet="SN_vw_SocialEmployements">
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="SocialJobID" ColumnName="SocialJobID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="YearLeft" ColumnName="YearLeft" />
+          <ScalarProperty Name="YearEmployed" ColumnName="YearEmployed" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_VW_SocialFriends">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_SocialFriends">
+        <MappingFragment StoreEntitySet="SN_VW_SocialFriends">
+          <ScalarProperty Name="InvitationID" ColumnName="InvitationID" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="DateRequested" ColumnName="DateRequested" />
+          <ScalarProperty Name="FriendID" ColumnName="FriendID" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+          <ScalarProperty Name="SocialFriendID" ColumnName="SocialFriendID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_SocialProfile">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_SocialProfile">
+        <MappingFragment StoreEntitySet="SN_vw_SocialProfile">
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="YearEmployed" ColumnName="YearEmployed" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DegreeObtained" ColumnName="DegreeObtained" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+          <ScalarProperty Name="SocialType" ColumnName="SocialType" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="SocialID" ColumnName="SocialID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_Subscription">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Subscription">
+        <MappingFragment StoreEntitySet="SN_vw_Subscription">
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_SubscriptionInvoice">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_SubscriptionInvoice">
+        <MappingFragment StoreEntitySet="SN_vw_SubscriptionInvoice">
+          <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SN_vw_SubscriptionPayment">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_SubscriptionPayment">
+        <MappingFragment StoreEntitySet="SN_vw_SubscriptionPayment">
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_VW_AccountType">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_VW_AccountType">
+        <MappingFragment StoreEntitySet="SYS_VW_AccountType">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
+          <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_VW_Banks">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_VW_Banks">
+        <MappingFragment StoreEntitySet="SYS_VW_Banks">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_VW_Country">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_VW_Country">
+        <MappingFragment StoreEntitySet="SYS_VW_Country">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_VW_Degrees">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_VW_Degrees">
+        <MappingFragment StoreEntitySet="SYS_VW_Degrees">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_vw_Roles">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_vw_Roles">
+        <MappingFragment StoreEntitySet="SYS_vw_Roles">
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYS_VW_Users">
+      <EntityTypeMapping TypeName="SocialNetworkModel.SYS_VW_Users">
+        <MappingFragment StoreEntitySet="SYS_VW_Users">
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

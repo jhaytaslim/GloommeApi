@@ -1,0 +1,2976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SocialNetworkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SN_Areas">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="AreaImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CategoryImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_ChartMessages">
+    <Key>
+      <PropertyRef Name="ChartMessageID" />
+    </Key>
+    <Property Name="ChartMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SocialID" Type="Int32" />
+    <Property Name="Message" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="MessageToID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_Commision">
+    <Key>
+      <PropertyRef Name="CommissionID" />
+    </Key>
+    <Property Name="CommissionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_CustomerJobs">
+    <Key>
+      <PropertyRef Name="CustomerPostID" />
+    </Key>
+    <Property Name="CustomerPostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="PostMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TimeLineInHours" Type="Int32" />
+    <Property Name="FeeFrom" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FeeTo" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SN_Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Midllename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="CustomerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="CustomerActive" Type="Boolean" />
+    <Property Name="IsLogin" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SN_CustomerWallet">
+    <Key>
+      <PropertyRef Name="CustomerWalleID" />
+    </Key>
+    <Property Name="CustomerWalleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CustomerID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_Dispute">
+    <Key>
+      <PropertyRef Name="DisputeID" />
+    </Key>
+    <Property Name="DisputeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="DisputeMessage" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="ProviderResponse" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateResponded" Type="DateTime" Precision="3" />
+    <Property Name="IsAdminApproved" Type="Boolean" />
+    <Property Name="IsTime" Type="Boolean" />
+    <Property Name="IsJobSatisfaction" Type="Boolean" />
+    <Property Name="DateApproved" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedBy" Type="Int32" />
+    <Property Name="JobCompletionRating" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ApprovedRating" Type="Decimal" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="SN_Invitation">
+    <Key>
+      <PropertyRef Name="InvitationID" />
+    </Key>
+    <Property Name="InvitationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="InvitedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_Invoices">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="SN_Jobs">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="JobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="PackageID" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceID" Type="Int32" />
+    <Property Name="IsAccepted" Type="Boolean" />
+    <Property Name="DateAccepted" Type="DateTime" Precision="3" />
+    <Property Name="ProviderComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsComplete" Type="Boolean" />
+    <Property Name="IsCustomerComplete" Type="Boolean" />
+    <Property Name="DateCustomerComplete" Type="DateTime" Precision="3" />
+    <Property Name="DateCompleted" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_Messages">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Message" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SourceID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="IsReade" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SN_Payments">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="PaymentDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SN_PostComments">
+    <Key>
+      <PropertyRef Name="PostCommentID" />
+    </Key>
+    <Property Name="PostCommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PostID" Type="Int32" />
+    <Property Name="SocialID" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_Proposals">
+    <Key>
+      <PropertyRef Name="ProposalID" />
+    </Key>
+    <Property Name="ProposalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerPostID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" Nullable="false" />
+    <Property Name="ProposedTimeLine" Type="Int32" />
+    <Property Name="ProposedAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateaCreated" Type="DateTime" Precision="3" />
+    <Property Name="IsAccepted" Type="Boolean" />
+    <Property Name="DateAccepted" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_ProviderAreas">
+    <Key>
+      <PropertyRef Name="ProviderAreaID" />
+    </Key>
+    <Property Name="ProviderAreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="AreaID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_ProviderBanks">
+    <Key>
+      <PropertyRef Name="ProviderBankID" />
+    </Key>
+    <Property Name="ProviderBankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="BankID" Type="Int32" />
+    <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SortCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_ProviderCategory">
+    <Key>
+      <PropertyRef Name="ProviderCategoryID" />
+    </Key>
+    <Property Name="ProviderCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_ProviderCertification">
+    <Key>
+      <PropertyRef Name="ProviderCertificationID" />
+    </Key>
+    <Property Name="ProviderCertificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="CertificationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearAchived" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CertificationProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_ProviderDocuments">
+    <Key>
+      <PropertyRef Name="ProviderDocumentID" />
+    </Key>
+    <Property Name="ProviderDocumentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="DocumentDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_ProviderEducation">
+    <Key>
+      <PropertyRef Name="ProviderEducationID" />
+    </Key>
+    <Property Name="ProviderEducationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="InstitutionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DegreeID" Type="Int32" />
+    <Property Name="YearObtained" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_ProviderJobs">
+    <Key>
+      <PropertyRef Name="ProviderJobID" />
+    </Key>
+    <Property Name="ProviderJobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="JobDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_ProviderKeyWords">
+    <Key>
+      <PropertyRef Name="ProviderKeyWordID" />
+    </Key>
+    <Property Name="ProviderKeyWordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="KeyWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_ProviderPackages">
+    <Key>
+      <PropertyRef Name="ProviderPackageID" />
+    </Key>
+    <Property Name="ProviderPackageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="AreaID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="PackageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PackageDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Timeline" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimelineType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SN_ProviderPictures">
+    <Key>
+      <PropertyRef Name="ProviderPictureID" />
+    </Key>
+    <Property Name="ProviderPictureID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="PictureDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PictureURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_ProviderRating">
+    <Key>
+      <PropertyRef Name="ProviderRating" />
+    </Key>
+    <Property Name="ProviderRating" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="RatingScore" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_ProviderReceipt">
+    <Key>
+      <PropertyRef Name="ProviderReceiptID" />
+    </Key>
+    <Property Name="ProviderReceiptID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="DateReceived" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ProviderID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_Providers">
+    <Key>
+      <PropertyRef Name="ProviderID" />
+    </Key>
+    <Property Name="ProviderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderTypeID" Type="Int32" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProfilePictureURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveStatus" Type="Boolean" />
+    <Property Name="IsLogin" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SN_ProviderTypes">
+    <Key>
+      <PropertyRef Name="ProviderTypeID" />
+    </Key>
+    <Property Name="ProviderTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_ProviderVideo">
+    <Key>
+      <PropertyRef Name="ProviderVideoID" />
+    </Key>
+    <Property Name="ProviderVideoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="VideoDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VideoURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_Settlement">
+    <Key>
+      <PropertyRef Name="SettlementID" />
+    </Key>
+    <Property Name="SettlementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="ProviderAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Commission" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CustomerID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_Skills">
+    <Key>
+      <PropertyRef Name="SkillID" />
+    </Key>
+    <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="AreaID" Type="Int32" />
+    <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SkillDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_Social">
+    <Key>
+      <PropertyRef Name="SocialID" />
+    </Key>
+    <Property Name="SocialID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SocialPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="SocialType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsOnline" Type="Boolean" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProfilePictureURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="CountryID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_SocialEducation">
+    <Key>
+      <PropertyRef Name="SocialEducationID" />
+    </Key>
+    <Property Name="SocialEducationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearFrom" Type="Int32" />
+    <Property Name="YearTo" Type="Int32" />
+    <Property Name="DegreeObtained" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_SocialEmployements">
+    <Key>
+      <PropertyRef Name="SocialJobID" />
+    </Key>
+    <Property Name="SocialJobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearEmployed" Type="DateTime" Precision="3" />
+    <Property Name="YearLeft" Type="DateTime" Precision="3" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="SocialID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_SocialFriends">
+    <Key>
+      <PropertyRef Name="SocialFriendID" />
+    </Key>
+    <Property Name="SocialFriendID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SocialID" Type="Int32" />
+    <Property Name="FriendID" Type="Int32" />
+    <Property Name="DateRequested" Type="DateTime" Precision="3" />
+    <Property Name="IsApproved" Type="Boolean" />
+    <Property Name="DateApproved" Type="DateTime" Precision="3" />
+    <Property Name="InvitationID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_SocialPosts">
+    <Key>
+      <PropertyRef Name="SocialPostID" />
+    </Key>
+    <Property Name="SocialPostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SocialID" Type="Int32" />
+    <Property Name="DatePosted" Type="DateTime" Precision="3" />
+    <Property Name="ContentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MessageFileURL" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_Subscription">
+    <Key>
+      <PropertyRef Name="SubscriptionID" />
+    </Key>
+    <Property Name="SubscriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" Nullable="false" />
+    <Property Name="AccountTypeID" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsComplete" Type="Int32" />
+    <Property Name="PaymentID" Type="Int32" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SN_SubscriptionInvoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="SubscriptionID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvoiceDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_SubscriptionPayment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceID" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="SYS_Banks">
+    <Key>
+      <PropertyRef Name="BankID" />
+    </Key>
+    <Property Name="BankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SYS_Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="JobRate" Type="Decimal" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="SYS_Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SYS_Degrees">
+    <Key>
+      <PropertyRef Name="DegreeID" />
+    </Key>
+    <Property Name="DegreeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DegreeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SYS_Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SYS_Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SN_SocialLogs">
+    <Key>
+      <PropertyRef Name="SocialLogID" />
+    </Key>
+    <Property Name="SocialLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SocialID" Type="Int32" />
+    <Property Name="LoginDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SYS_AccountType">
+    <Key>
+      <PropertyRef Name="AccountTypeID" />
+    </Key>
+    <Property Name="AccountTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="SocialNetworkEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SN_Areas" EntityType="Self.SN_Areas" />
+    <EntitySet Name="SN_Category" EntityType="Self.SN_Category" />
+    <EntitySet Name="SN_ChartMessages" EntityType="Self.SN_ChartMessages" />
+    <EntitySet Name="SN_Commision" EntityType="Self.SN_Commision" />
+    <EntitySet Name="SN_CustomerJobs" EntityType="Self.SN_CustomerJobs" />
+    <EntitySet Name="SN_Customers" EntityType="Self.SN_Customers" />
+    <EntitySet Name="SN_CustomerWallet" EntityType="Self.SN_CustomerWallet" />
+    <EntitySet Name="SN_Dispute" EntityType="Self.SN_Dispute" />
+    <EntitySet Name="SN_Invitation" EntityType="Self.SN_Invitation" />
+    <EntitySet Name="SN_Invoices" EntityType="Self.SN_Invoices" />
+    <EntitySet Name="SN_Jobs" EntityType="Self.SN_Jobs" />
+    <EntitySet Name="SN_Messages" EntityType="Self.SN_Messages" />
+    <EntitySet Name="SN_Payments" EntityType="Self.SN_Payments" />
+    <EntitySet Name="SN_PostComments" EntityType="Self.SN_PostComments" />
+    <EntitySet Name="SN_Proposals" EntityType="Self.SN_Proposals" />
+    <EntitySet Name="SN_ProviderAreas" EntityType="Self.SN_ProviderAreas" />
+    <EntitySet Name="SN_ProviderBanks" EntityType="Self.SN_ProviderBanks" />
+    <EntitySet Name="SN_ProviderCategory" EntityType="Self.SN_ProviderCategory" />
+    <EntitySet Name="SN_ProviderCertification" EntityType="Self.SN_ProviderCertification" />
+    <EntitySet Name="SN_ProviderDocuments" EntityType="Self.SN_ProviderDocuments" />
+    <EntitySet Name="SN_ProviderEducation" EntityType="Self.SN_ProviderEducation" />
+    <EntitySet Name="SN_ProviderJobs" EntityType="Self.SN_ProviderJobs" />
+    <EntitySet Name="SN_ProviderKeyWords" EntityType="Self.SN_ProviderKeyWords" />
+    <EntitySet Name="SN_ProviderPackages" EntityType="Self.SN_ProviderPackages" />
+    <EntitySet Name="SN_ProviderPictures" EntityType="Self.SN_ProviderPictures" />
+    <EntitySet Name="SN_ProviderRating" EntityType="Self.SN_ProviderRating" />
+    <EntitySet Name="SN_ProviderReceipt" EntityType="Self.SN_ProviderReceipt" />
+    <EntitySet Name="SN_Providers" EntityType="Self.SN_Providers" />
+    <EntitySet Name="SN_ProviderTypes" EntityType="Self.SN_ProviderTypes" />
+    <EntitySet Name="SN_ProviderVideo" EntityType="Self.SN_ProviderVideo" />
+    <EntitySet Name="SN_Settlement" EntityType="Self.SN_Settlement" />
+    <EntitySet Name="SN_Skills" EntityType="Self.SN_Skills" />
+    <EntitySet Name="SN_Social" EntityType="Self.SN_Social" />
+    <EntitySet Name="SN_SocialEducation" EntityType="Self.SN_SocialEducation" />
+    <EntitySet Name="SN_SocialEmployements" EntityType="Self.SN_SocialEmployements" />
+    <EntitySet Name="SN_SocialFriends" EntityType="Self.SN_SocialFriends" />
+    <EntitySet Name="SN_SocialPosts" EntityType="Self.SN_SocialPosts" />
+    <EntitySet Name="SN_Subscription" EntityType="Self.SN_Subscription" />
+    <EntitySet Name="SN_SubscriptionInvoice" EntityType="Self.SN_SubscriptionInvoice" />
+    <EntitySet Name="SN_SubscriptionPayment" EntityType="Self.SN_SubscriptionPayment" />
+    <EntitySet Name="SYS_Banks" EntityType="Self.SYS_Banks" />
+    <EntitySet Name="SYS_Company" EntityType="Self.SYS_Company" />
+    <EntitySet Name="SYS_Country" EntityType="Self.SYS_Country" />
+    <EntitySet Name="SYS_Degrees" EntityType="Self.SYS_Degrees" />
+    <EntitySet Name="SYS_Roles" EntityType="Self.SYS_Roles" />
+    <EntitySet Name="SYS_Users" EntityType="Self.SYS_Users" />
+    <EntitySet Name="SN_SocialLogs" EntityType="Self.SN_SocialLogs" />
+    <EntitySet Name="SYS_AccountType" EntityType="Self.SYS_AccountType" />
+    <FunctionImport Name="ProviderPictures_Fetch" ReturnType="Collection(SocialNetworkModel.ProviderPictures_Fetch_Result)">
+      <Parameter Name="ProviderPictureID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Areas_Fetch" EntitySet="SN_VW_Areas" ReturnType="Collection(SocialNetworkModel.SN_VW_Areas)">
+      <Parameter Name="AreaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Areas_FetchByCategoryID" ReturnType="Collection(SocialNetworkModel.SN_Areas_FetchByCategoryID_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="AreaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Areas_FetchByName" ReturnType="Collection(SocialNetworkModel.SN_Areas_FetchByName_Result)">
+      <Parameter Name="AreaName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Areas_FetchName" ReturnType="Collection(SocialNetworkModel.SN_Areas_FetchName_Result)">
+      <Parameter Name="AreaName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Category_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Category_Fetch_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ChartMessages_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ChartMessages_Fetch_Result)">
+      <Parameter Name="ChartMessageID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ChartMessages_FetchByInterval" ReturnType="Collection(SocialNetworkModel.SN_ChartMessages_FetchByInterval_Result)">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SN_CustomerJobs_Fetch" ReturnType="Collection(SocialNetworkModel.SN_CustomerJobs_Fetch_Result)">
+      <Parameter Name="CustomerPostID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_CustomerJobs_FetchActive" ReturnType="Collection(SocialNetworkModel.SN_CustomerJobs_FetchActive_Result)">
+      <Parameter Name="CustomerPostID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_CustomerJobs_FetchByCustomerID" ReturnType="Collection(SocialNetworkModel.SN_CustomerJobs_FetchByCustomerID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Customers_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Customers_Fetch_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Customers_FetchCustomerByEmail" ReturnType="Collection(SocialNetworkModel.SN_Customers_FetchCustomerByEmail_Result)">
+      <Parameter Name="EmailAddress" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Customers_FetchCustomerByPassword" ReturnType="Collection(SocialNetworkModel.SN_Customers_FetchCustomerByPassword_Result)">
+      <Parameter Name="CustomerPassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SN_CustomerWallet_FetchByCustomerID" ReturnType="Collection(SocialNetworkModel.SN_CustomerWallet_FetchByCustomerID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_CustomerWallet_FetchSummary" ReturnType="Collection(Decimal)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Dispute_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Dispute_Fetch_Result)">
+      <Parameter Name="DisputeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Dispute_FetchByCustomerID" ReturnType="Collection(SocialNetworkModel.SN_Dispute_FetchByCustomerID_Result)">
+      <Parameter Name="JobID" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Dispute_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_Dispute_FetchByProviderID_Result)">
+      <Parameter Name="JobID" Mode="In" Type="Int32" />
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Friends_FetchPendingReqeust" ReturnType="Collection(SocialNetworkModel.SN_Friends_FetchPendingReqeust_Result)">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_GetSocialID" ReturnType="Collection(Int32)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Type" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Invitation_Fetch">
+      <Parameter Name="InvitationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Invoices_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Invoices_Fetch_Result)">
+      <Parameter Name="InvoiceID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Invoices_FetchByCustomerID" ReturnType="Collection(SocialNetworkModel.SN_Invoices_FetchByCustomerID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Jobs_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Jobs_Fetch_Result)">
+      <Parameter Name="JobID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Jobs_FetchByCustomerID" ReturnType="Collection(SocialNetworkModel.SN_Jobs_FetchByCustomerID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Jobs_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_Jobs_FetchByProviderID_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Messages_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Messages_Fetch_Result)">
+      <Parameter Name="MessageID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Messages_FetchByCustomerID" ReturnType="Collection(SocialNetworkModel.SN_Messages_FetchByCustomerID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="JobID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Messages_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_Messages_FetchByProviderID_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+      <Parameter Name="JobID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Payments_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Payments_Fetch_Result)">
+      <Parameter Name="PaymentID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Payments_FetchByCustomerID" ReturnType="Collection(SocialNetworkModel.SN_Payments_FetchByCustomerID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_PostComments_Fetch" ReturnType="Collection(SocialNetworkModel.SN_PostComments_Fetch_Result)">
+      <Parameter Name="PostCommentID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_PostComments_FetchByPostID" ReturnType="Collection(SocialNetworkModel.SN_PostComments_FetchByPostID_Result)">
+      <Parameter Name="PostID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Proposals_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Proposals_Fetch_Result)">
+      <Parameter Name="ProposalID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Proposals_FetchByCustomerID" ReturnType="Collection(SocialNetworkModel.SN_Proposals_FetchByCustomerID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Proposals_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_Proposals_FetchByProviderID_Result)">
+      <Parameter Name="ProviderId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderAreas_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderAreas_Fetch_Result)">
+      <Parameter Name="ProviderAreaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderAreas_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_ProviderAreas_FetchByProviderID_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderAreas_FetchByProviderIDAndCategoryID" ReturnType="Collection(SocialNetworkModel.SN_ProviderAreas_FetchByProviderIDAndCategoryID_Result)">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderBanks_Fetch" EntitySet="SN_vw_ProviderBanks" ReturnType="Collection(SocialNetworkModel.SN_vw_ProviderBanks)">
+      <Parameter Name="ProviderBankID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderBanks_FetchByProviderID" EntitySet="SN_vw_ProviderBanks" ReturnType="Collection(SocialNetworkModel.SN_vw_ProviderBanks)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderCategory_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderCategory_Fetch_Result)">
+      <Parameter Name="ProviderCategoryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderCategory_FetchByProviderID" EntitySet="SN_vw_ProviderCertification" ReturnType="Collection(SocialNetworkModel.SN_vw_ProviderCertification)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderCertification_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderCertification_Fetch_Result)">
+      <Parameter Name="ProviderCertificationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderCertification_FetchByProviderID" EntitySet="SN_vw_ProviderCertification" ReturnType="Collection(SocialNetworkModel.SN_vw_ProviderCertification)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderDocuments_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderDocuments_Fetch_Result)">
+      <Parameter Name="ProviderDocumentID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderDocuments_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_ProviderDocuments_FetchByProviderID_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderEducation_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderEducation_Fetch_Result)">
+      <Parameter Name="ProviderEducationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderEducation_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_ProviderEducation_FetchByProviderID_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderJobs_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderJobs_Fetch_Result)">
+      <Parameter Name="ProviderJobID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderKeyWords_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderKeyWords_Fetch_Result)">
+      <Parameter Name="ProviderKeyWordID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderKeyWords_FetchByProviderID" EntitySet="SN_vw_ProviderKeyWords" ReturnType="Collection(SocialNetworkModel.SN_vw_ProviderKeyWords)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderPackages_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderPackages_Fetch_Result)">
+      <Parameter Name="ProviderPackageID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderPackages_FetchByProviderID" EntitySet="SN_vw_ProviderPackages" ReturnType="Collection(SocialNetworkModel.SN_vw_ProviderPackages)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderPictures_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderPictures_Fetch_Result)">
+      <Parameter Name="ProviderPictureID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderPictures_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_ProviderPictures_FetchByProviderID_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderRating_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderRating_Fetch_Result)">
+      <Parameter Name="ProviderRating" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sn_providerRating_Summary" ReturnType="Collection(Int32)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderReceipt_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_ProviderReceipt_FetchByProviderID_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderReceipt_FetchSummary" ReturnType="Collection(Decimal)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Providers_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Providers_Fetch_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Providers_FetchByArea" ReturnType="Collection(SocialNetworkModel.SN_Providers_FetchByArea_Result)">
+      <Parameter Name="AreaID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Providers_FetchByCategory">
+      <Parameter Name="CategoryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Providers_FetchProfile" ReturnType="Collection(SocialNetworkModel.SN_Providers_FetchProfile_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Providers_FetchProviderByEmail" ReturnType="Collection(SocialNetworkModel.SN_Providers_FetchProviderByEmail_Result)">
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Providers_FetchProviderByPassword" ReturnType="Collection(SocialNetworkModel.SN_Providers_FetchProviderByPassword_Result)">
+      <Parameter Name="ProviderPassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Providers_Search" ReturnType="Collection(SocialNetworkModel.SN_Providers_Search_Result)">
+      <Parameter Name="SearchWord" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderTypes_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderTypes_Fetch_Result)">
+      <Parameter Name="ProviderTypeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderVideo_Fetch" ReturnType="Collection(SocialNetworkModel.SN_ProviderVideo_Fetch_Result)">
+      <Parameter Name="ProviderVideoID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_ProviderVideo_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_ProviderVideo_FetchByProviderID_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Skills_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Skills_Fetch_Result)">
+      <Parameter Name="SkillID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Skills_FetchByProvider" EntitySet="SN_vw_Skills" ReturnType="Collection(SocialNetworkModel.SN_vw_Skills)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Social_Fetch">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Social_FetchProfilePicture" ReturnType="Collection(SocialNetworkModel.SN_Social_FetchProfilePicture_Result)">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Social_FetchSearch" ReturnType="Collection(SocialNetworkModel.SN_Social_FetchSearch_Result)">
+      <Parameter Name="SearchString" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Social_FetchSuggestedFriend" ReturnType="Collection(SocialNetworkModel.SN_Social_FetchSuggestedFriend_Result)">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SocialEducation_Fetch" ReturnType="Collection(SocialNetworkModel.SN_SocialEducation_Fetch_Result)">
+      <Parameter Name="SocialEducationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SocialEducation_FetchBySocialID" ReturnType="Collection(SocialNetworkModel.SN_SocialEducation_FetchBySocialID_Result)">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SocialEmployements_Fetch" ReturnType="Collection(SocialNetworkModel.SN_SocialEmployements_Fetch_Result)">
+      <Parameter Name="SocialJobID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SocialEmployements_FetchBySocialID" ReturnType="Collection(SocialNetworkModel.SN_SocialEmployements_FetchBySocialID_Result)">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SocialFriend_FetchOnlineList" ReturnType="Collection(SocialNetworkModel.SN_SocialFriend_FetchOnlineList_Result)">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SocialFriends_Fetch" ReturnType="Collection(SocialNetworkModel.SN_SocialFriends_Fetch_Result)">
+      <Parameter Name="SocialFriendID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SocialFriends_FetchBySocialID" ReturnType="Collection(SocialNetworkModel.SN_SocialFriends_FetchBySocialID_Result)">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SocialLogs_FetchMostRecent" ReturnType="Collection(SocialNetworkModel.SN_SocialLogs_FetchMostRecent_Result)">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SocialPosts_Fetch">
+      <Parameter Name="SocialPostID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SocialPosts_FetchByFriend" ReturnType="Collection(SocialNetworkModel.SN_SocialPosts_FetchByFriend_Result)">
+      <Parameter Name="SocialID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Subscription_Fetch" ReturnType="Collection(SocialNetworkModel.SN_Subscription_Fetch_Result)">
+      <Parameter Name="SubscriptionID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_Subscription_FetchActive" ReturnType="Collection(SocialNetworkModel.SN_Subscription_FetchActive_Result)">
+      <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SubscriptionInvoice_Fetch" ReturnType="Collection(SocialNetworkModel.SN_SubscriptionInvoice_Fetch_Result)">
+      <Parameter Name="SubscriptionInvoiceID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SN_SubscriptionPayment_Fetch" ReturnType="Collection(SocialNetworkModel.SN_SubscriptionPayment_Fetch_Result)">
+      <Parameter Name="PaymentID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SYS_AccountType_Fetch" ReturnType="Collection(SocialNetworkModel.SYS_AccountType_Fetch_Result)">
+      <Parameter Name="AccountTypeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SYS_Banks_Fetch" EntitySet="SYS_VW_Banks" ReturnType="Collection(SocialNetworkModel.SYS_VW_Banks)">
+      <Parameter Name="BankID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SYS_Company_Fetch">
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SYS_Country_Fetch" ReturnType="Collection(SocialNetworkModel.SYS_Country_Fetch_Result)">
+      <Parameter Name="CountryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SYS_Degrees_Fetch" ReturnType="Collection(SocialNetworkModel.SYS_Degrees_Fetch_Result)">
+      <Parameter Name="DegreeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SYS_Roles_Fetch" ReturnType="Collection(SocialNetworkModel.SYS_Roles_Fetch_Result)">
+      <Parameter Name="RoleID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SYS_Users_Fetch" ReturnType="Collection(SocialNetworkModel.SYS_Users_Fetch_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="SN_ProviderProfile" EntityType="SocialNetworkModel.SN_ProviderProfile" />
+    <EntitySet Name="SN_VW_Areas" EntityType="SocialNetworkModel.SN_VW_Areas" />
+    <EntitySet Name="SN_vw_Category" EntityType="SocialNetworkModel.SN_vw_Category" />
+    <EntitySet Name="SN_vw_ChartMessages" EntityType="SocialNetworkModel.SN_vw_ChartMessages" />
+    <EntitySet Name="SN_vw_CustomerJobs" EntityType="SocialNetworkModel.SN_vw_CustomerJobs" />
+    <EntitySet Name="SN_vw_Customers" EntityType="SocialNetworkModel.SN_vw_Customers" />
+    <EntitySet Name="SN_vw_Dispute" EntityType="SocialNetworkModel.SN_vw_Dispute" />
+    <EntitySet Name="SN_vw_Invoices" EntityType="SocialNetworkModel.SN_vw_Invoices" />
+    <EntitySet Name="SN_vw_Jobs" EntityType="SocialNetworkModel.SN_vw_Jobs" />
+    <EntitySet Name="SN_vw_Messages" EntityType="SocialNetworkModel.SN_vw_Messages" />
+    <EntitySet Name="SN_VW_Payments" EntityType="SocialNetworkModel.SN_VW_Payments" />
+    <EntitySet Name="SN_vw_PostComments" EntityType="SocialNetworkModel.SN_vw_PostComments" />
+    <EntitySet Name="SN_vw_Proposals" EntityType="SocialNetworkModel.SN_vw_Proposals" />
+    <EntitySet Name="SN_vw_ProviderAreas" EntityType="SocialNetworkModel.SN_vw_ProviderAreas" />
+    <EntitySet Name="SN_vw_ProviderBanks" EntityType="SocialNetworkModel.SN_vw_ProviderBanks" />
+    <EntitySet Name="SN_vw_ProviderCategory" EntityType="SocialNetworkModel.SN_vw_ProviderCategory" />
+    <EntitySet Name="SN_vw_ProviderCertification" EntityType="SocialNetworkModel.SN_vw_ProviderCertification" />
+    <EntitySet Name="SN_VW_ProviderDocuments" EntityType="SocialNetworkModel.SN_VW_ProviderDocuments" />
+    <EntitySet Name="SN_vw_ProviderEducation" EntityType="SocialNetworkModel.SN_vw_ProviderEducation" />
+    <EntitySet Name="SN_VW_ProviderJobs" EntityType="SocialNetworkModel.SN_VW_ProviderJobs" />
+    <EntitySet Name="SN_vw_ProviderKeyWords" EntityType="SocialNetworkModel.SN_vw_ProviderKeyWords" />
+    <EntitySet Name="SN_vw_ProviderPackages" EntityType="SocialNetworkModel.SN_vw_ProviderPackages" />
+    <EntitySet Name="SN_VW_ProviderPictures" EntityType="SocialNetworkModel.SN_VW_ProviderPictures" />
+    <EntitySet Name="SN_vw_ProviderProfile" EntityType="SocialNetworkModel.SN_vw_ProviderProfile" />
+    <EntitySet Name="SN_VW_ProviderRating" EntityType="SocialNetworkModel.SN_VW_ProviderRating" />
+    <EntitySet Name="SN_vw_ProviderReceipt" EntityType="SocialNetworkModel.SN_vw_ProviderReceipt" />
+    <EntitySet Name="SN_vw_Providers" EntityType="SocialNetworkModel.SN_vw_Providers" />
+    <EntitySet Name="SN_VW_ProviderTypes" EntityType="SocialNetworkModel.SN_VW_ProviderTypes" />
+    <EntitySet Name="SN_VW_ProviderVideo" EntityType="SocialNetworkModel.SN_VW_ProviderVideo" />
+    <EntitySet Name="SN_VW_ProviderVideos" EntityType="SocialNetworkModel.SN_VW_ProviderVideos" />
+    <EntitySet Name="SN_vw_Skills" EntityType="SocialNetworkModel.SN_vw_Skills" />
+    <EntitySet Name="SN_vw_SocialEducation" EntityType="SocialNetworkModel.SN_vw_SocialEducation" />
+    <EntitySet Name="SN_vw_SocialEmployements" EntityType="SocialNetworkModel.SN_vw_SocialEmployements" />
+    <EntitySet Name="SN_VW_SocialFriends" EntityType="SocialNetworkModel.SN_VW_SocialFriends" />
+    <EntitySet Name="SN_vw_SocialProfile" EntityType="SocialNetworkModel.SN_vw_SocialProfile" />
+    <EntitySet Name="SN_vw_Subscription" EntityType="SocialNetworkModel.SN_vw_Subscription" />
+    <EntitySet Name="SN_vw_SubscriptionInvoice" EntityType="SocialNetworkModel.SN_vw_SubscriptionInvoice" />
+    <EntitySet Name="SN_vw_SubscriptionPayment" EntityType="SocialNetworkModel.SN_vw_SubscriptionPayment" />
+    <EntitySet Name="SYS_VW_AccountType" EntityType="SocialNetworkModel.SYS_VW_AccountType" />
+    <EntitySet Name="SYS_VW_Banks" EntityType="SocialNetworkModel.SYS_VW_Banks" />
+    <EntitySet Name="SYS_VW_Country" EntityType="SocialNetworkModel.SYS_VW_Country" />
+    <EntitySet Name="SYS_VW_Degrees" EntityType="SocialNetworkModel.SYS_VW_Degrees" />
+    <EntitySet Name="SYS_vw_Roles" EntityType="SocialNetworkModel.SYS_vw_Roles" />
+    <EntitySet Name="SYS_VW_Users" EntityType="SocialNetworkModel.SYS_VW_Users" />
+  </EntityContainer>
+  <ComplexType Name="ProviderPictures_Fetch_Result">
+    <Property Type="Int32" Name="ProviderPictureID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="PictureDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PictureURL" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_Areas_Fetch_Result">
+    <Property Type="Int32" Name="AreaID" Nullable="false" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AreaImageURL" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Areas_FetchByCategoryID_Result">
+    <Property Type="Int32" Name="AreaID" Nullable="false" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AreaImageURL" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Areas_FetchByName_Result">
+    <Property Type="Int32" Name="AreaID" Nullable="false" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AreaImageURL" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Areas_FetchName_Result">
+    <Property Type="Int32" Name="AreaID" Nullable="false" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AreaImageURL" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Category_Fetch_Result">
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="CategoryImageURL" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_ChartMessages_Fetch_Result">
+    <Property Type="Int32" Name="ChartMessageID" Nullable="false" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="MessageToID" Nullable="true" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ChartMessages_FetchByInterval_Result">
+    <Property Type="Int32" Name="ChartMessageID" Nullable="false" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="MessageToID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_CustomerJobs_Fetch_Result">
+    <Property Type="Int32" Name="CustomerPostID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="PostMessage" Nullable="true" />
+    <Property Type="Int32" Name="TimeLineInHours" Nullable="true" />
+    <Property Type="Decimal" Name="FeeFrom" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="FeeTo" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Midllename" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_CustomerJobs_FetchActive_Result">
+    <Property Type="Int32" Name="CustomerPostID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="PostMessage" Nullable="true" />
+    <Property Type="Int32" Name="TimeLineInHours" Nullable="true" />
+    <Property Type="Decimal" Name="FeeFrom" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="FeeTo" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Midllename" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_CustomerJobs_FetchByCustomerID_Result">
+    <Property Type="Int32" Name="CustomerPostID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="PostMessage" Nullable="true" />
+    <Property Type="Int32" Name="TimeLineInHours" Nullable="true" />
+    <Property Type="Decimal" Name="FeeFrom" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="FeeTo" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Midllename" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_Customers_Fetch_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="Firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Midllename" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountryID" Nullable="true" />
+    <Property Type="String" Name="CustomerPassword" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="CustomerActive" Nullable="true" />
+    <Property Type="Boolean" Name="IsLogin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Customers_FetchCustomerByEmail_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="Firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Midllename" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountryID" Nullable="true" />
+    <Property Type="String" Name="CustomerPassword" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="CustomerActive" Nullable="true" />
+    <Property Type="Boolean" Name="IsLogin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Customers_FetchCustomerByPassword_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="Firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Midllename" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountryID" Nullable="true" />
+    <Property Type="String" Name="CustomerPassword" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="CustomerActive" Nullable="true" />
+    <Property Type="Boolean" Name="IsLogin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_CustomerWallet_FetchByCustomerID_Result">
+    <Property Type="Int32" Name="CustomerWalleID" Nullable="false" />
+    <Property Type="Int32" Name="JobID" Nullable="true" />
+    <Property Type="String" Name="PaymentType" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Dispute_Fetch_Result">
+    <Property Type="Int32" Name="DisputeID" Nullable="false" />
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="String" Name="DisputeMessage" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="ProviderResponse" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateResponded" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsAdminApproved" Nullable="true" />
+    <Property Type="Boolean" Name="IsTime" Nullable="true" />
+    <Property Type="Boolean" Name="IsJobSatisfaction" Nullable="true" />
+    <Property Type="DateTime" Name="DateApproved" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ApprovedBy" Nullable="true" />
+    <Property Type="Int32" Name="PackageID" Nullable="true" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+    <Property Type="Decimal" Name="JobCompletionRating" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SN_Dispute_FetchByCustomerID_Result">
+    <Property Type="Int32" Name="DisputeID" Nullable="false" />
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="String" Name="DisputeMessage" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="ProviderResponse" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateResponded" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsAdminApproved" Nullable="true" />
+    <Property Type="Boolean" Name="IsTime" Nullable="true" />
+    <Property Type="Boolean" Name="IsJobSatisfaction" Nullable="true" />
+    <Property Type="DateTime" Name="DateApproved" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ApprovedBy" Nullable="true" />
+    <Property Type="Int32" Name="PackageID" Nullable="true" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+    <Property Type="Decimal" Name="JobCompletionRating" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SN_Dispute_FetchByProviderID_Result">
+    <Property Type="Int32" Name="DisputeID" Nullable="false" />
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="String" Name="DisputeMessage" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="ProviderResponse" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateResponded" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsAdminApproved" Nullable="true" />
+    <Property Type="Boolean" Name="IsTime" Nullable="true" />
+    <Property Type="Boolean" Name="IsJobSatisfaction" Nullable="true" />
+    <Property Type="DateTime" Name="DateApproved" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ApprovedBy" Nullable="true" />
+    <Property Type="Int32" Name="PackageID" Nullable="true" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+    <Property Type="Decimal" Name="JobCompletionRating" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="SN_Friends_FetchPendingReqeust_Result">
+    <Property Type="Int32" Name="SocialFriendID" Nullable="false" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="Int32" Name="FriendID" Nullable="true" />
+    <Property Type="DateTime" Name="DateRequested" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Expr1" Nullable="false" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsOnline" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsApproved" Nullable="true" />
+    <Property Type="DateTime" Name="DateApproved" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="InvitationID" Nullable="true" />
+    <Property Type="String" Name="Fullname" Nullable="true" MaxLength="152" />
+  </ComplexType>
+  <ComplexType Name="SN_Invoices_Fetch_Result">
+    <Property Type="Int32" Name="InvoiceID" Nullable="false" />
+    <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="InvoiceDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="JobID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="Comment" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Invoices_FetchByCustomerID_Result">
+    <Property Type="Int32" Name="InvoiceID" Nullable="false" />
+    <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="InvoiceDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="JobID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="Comment" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Jobs_Fetch_Result">
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="PackageID" Nullable="true" />
+    <Property Type="String" Name="Comment" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="InvoiceID" Nullable="true" />
+    <Property Type="Boolean" Name="IsAccepted" Nullable="true" />
+    <Property Type="DateTime" Name="DateAccepted" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProviderComment" Nullable="true" />
+    <Property Type="Boolean" Name="IsComplete" Nullable="true" />
+    <Property Type="Boolean" Name="IsCustomerComplete" Nullable="true" />
+    <Property Type="DateTime" Name="DateCustomerComplete" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="PackageName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PackageDescription" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Jobs_FetchByCustomerID_Result">
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="PackageID" Nullable="true" />
+    <Property Type="String" Name="Comment" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="InvoiceID" Nullable="true" />
+    <Property Type="Boolean" Name="IsAccepted" Nullable="true" />
+    <Property Type="DateTime" Name="DateAccepted" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProviderComment" Nullable="true" />
+    <Property Type="Boolean" Name="IsComplete" Nullable="true" />
+    <Property Type="Boolean" Name="IsCustomerComplete" Nullable="true" />
+    <Property Type="DateTime" Name="DateCustomerComplete" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="PackageName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PackageDescription" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Jobs_FetchByProviderID_Result">
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="PackageID" Nullable="true" />
+    <Property Type="String" Name="Comment" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="InvoiceID" Nullable="true" />
+    <Property Type="Boolean" Name="IsAccepted" Nullable="true" />
+    <Property Type="DateTime" Name="DateAccepted" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProviderComment" Nullable="true" />
+    <Property Type="Boolean" Name="IsComplete" Nullable="true" />
+    <Property Type="Boolean" Name="IsCustomerComplete" Nullable="true" />
+    <Property Type="DateTime" Name="DateCustomerComplete" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="PackageName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PackageDescription" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Messages_Fetch_Result">
+    <Property Type="Int32" Name="MessageID" Nullable="false" />
+    <Property Type="Int32" Name="JobID" Nullable="true" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="SourceID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsReade" Nullable="true" />
+    <Property Type="Int32" Name="PackageID" Nullable="true" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+  </ComplexType>
+  <ComplexType Name="SN_Messages_FetchByCustomerID_Result">
+    <Property Type="Int32" Name="MessageID" Nullable="false" />
+    <Property Type="Int32" Name="JobID" Nullable="true" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="SourceID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsReade" Nullable="true" />
+    <Property Type="Int32" Name="PackageID" Nullable="true" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+  </ComplexType>
+  <ComplexType Name="SN_Messages_FetchByProviderID_Result">
+    <Property Type="Int32" Name="MessageID" Nullable="false" />
+    <Property Type="Int32" Name="JobID" Nullable="true" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="Message" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="SourceID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsReade" Nullable="true" />
+    <Property Type="Int32" Name="PackageID" Nullable="true" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+  </ComplexType>
+  <ComplexType Name="SN_Payments_Fetch_Result">
+    <Property Type="Int32" Name="PaymentID" Nullable="false" />
+    <Property Type="String" Name="PaymentDescription" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="Int32" Name="InvoiceID" Nullable="false" />
+    <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="Comment" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Payments_FetchByCustomerID_Result">
+    <Property Type="Int32" Name="PaymentID" Nullable="false" />
+    <Property Type="String" Name="PaymentDescription" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+    <Property Type="Int32" Name="JobID" Nullable="false" />
+    <Property Type="Int32" Name="InvoiceID" Nullable="false" />
+    <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="Comment" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_PostComments_Fetch_Result">
+    <Property Type="Int32" Name="PostCommentID" Nullable="false" />
+    <Property Type="Int32" Name="PostID" Nullable="true" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="String" Name="Comment" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="SocialPostID" Nullable="false" />
+    <Property Type="String" Name="Message" Nullable="true" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_PostComments_FetchByPostID_Result">
+    <Property Type="Int32" Name="PostCommentID" Nullable="false" />
+    <Property Type="Int32" Name="PostID" Nullable="true" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="String" Name="Comment" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="SocialPostID" Nullable="false" />
+    <Property Type="String" Name="Message" Nullable="true" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_Proposals_Fetch_Result">
+    <Property Type="Int32" Name="ProposalID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerPostID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="Int32" Name="ProposedTimeLine" Nullable="true" />
+    <Property Type="Decimal" Name="ProposedAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Remark" Nullable="true" />
+    <Property Type="DateTime" Name="DateaCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="PostMessage" Nullable="true" />
+    <Property Type="Int32" Name="TimeLineInHours" Nullable="true" />
+    <Property Type="Decimal" Name="FeeFrom" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="FeeTo" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Proposals_FetchByCustomerID_Result">
+    <Property Type="Int32" Name="ProposalID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerPostID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="Int32" Name="ProposedTimeLine" Nullable="true" />
+    <Property Type="Decimal" Name="ProposedAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Remark" Nullable="true" />
+    <Property Type="DateTime" Name="DateaCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="PostMessage" Nullable="true" />
+    <Property Type="Int32" Name="TimeLineInHours" Nullable="true" />
+    <Property Type="Decimal" Name="FeeFrom" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="FeeTo" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Proposals_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProposalID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerPostID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="Int32" Name="ProposedTimeLine" Nullable="true" />
+    <Property Type="Decimal" Name="ProposedAmount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Remark" Nullable="true" />
+    <Property Type="DateTime" Name="DateaCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="String" Name="PostMessage" Nullable="true" />
+    <Property Type="Int32" Name="TimeLineInHours" Nullable="true" />
+    <Property Type="Decimal" Name="FeeFrom" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="FeeTo" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderAreas_Fetch_Result">
+    <Property Type="Int32" Name="ProviderAreaID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderAreas_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderAreaID" Nullable="true" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderAreas_FetchByProviderIDAndCategoryID_Result">
+    <Property Type="Int32" Name="ProviderAreaID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderBanks_Fetch_Result">
+    <Property Type="Int32" Name="ProviderBankID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="BankID" Nullable="true" />
+    <Property Type="String" Name="AccountNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SortCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AccountName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="BankName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderBanks_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderBankID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="BankID" Nullable="true" />
+    <Property Type="String" Name="AccountNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SortCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AccountName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="BankName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderCategory_Fetch_Result">
+    <Property Type="Int32" Name="ProviderCategoryID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderCategory_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderCategoryID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderCertification_Fetch_Result">
+    <Property Type="Int32" Name="ProviderCertificationID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="CertificationName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="YearAchived" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CertificationProvider" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderCertification_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderCertificationID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="CertificationName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="YearAchived" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CertificationProvider" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderDocuments_Fetch_Result">
+    <Property Type="Int32" Name="ProviderDocumentID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="DocumentDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DocumentURL" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderDocuments_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderDocumentID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="DocumentDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DocumentURL" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderEducation_Fetch_Result">
+    <Property Type="Int32" Name="ProviderEducationID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="InstitutionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="DegreeID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="YearObtained" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DegreeName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderEducation_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderEducationID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="InstitutionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="DegreeID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="YearObtained" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DegreeName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderJobs_Fetch_Result">
+    <Property Type="Int32" Name="ProviderJobID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="JobDescription" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderKeyWords_Fetch_Result">
+    <Property Type="Int32" Name="ProviderKeyWordID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="KeyWord" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderKeyWords_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderKeyWordID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="KeyWord" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderPackages_Fetch_Result">
+    <Property Type="Int32" Name="ProviderPackageID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="PackageName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PackageDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Timeline" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TimelineType" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderPackages_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderPackageID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="PackageName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PackageDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Timeline" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TimelineType" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderPictures_Fetch_Result">
+    <Property Type="Int32" Name="ProviderPictureID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="PictureDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PictureURL" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderPictures_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderPictureID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="PictureDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PictureURL" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderRating_Fetch_Result">
+    <Property Type="Int32" Name="ProviderRating" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="CustomerID" Nullable="true" />
+    <Property Type="Int32" Name="RatingScore" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderReceipt_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderReceiptID" Nullable="false" />
+    <Property Type="Int32" Name="JobID" Nullable="true" />
+    <Property Type="DateTime" Name="DateReceived" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Providers_Fetch_Result">
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderTypeID" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AccountTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fullname" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="ProviderAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProviderPassword" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountryID" Nullable="true" />
+    <Property Type="String" Name="CountryName" Nullable="true" />
+    <Property Type="String" Name="ProviderTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePictureURL" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="ActiveStatus" Nullable="true" />
+    <Property Type="Boolean" Name="IsLogin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Providers_FetchByArea_Result">
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="String" Name="Fullname" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SearchResult" Nullable="true" MaxLength="349" />
+    <Property Type="Int32" Name="ProviderID1" Nullable="false" />
+    <Property Type="Int32" Name="ProviderTypeID" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fullname1" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="ProviderAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountryID" Nullable="true" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProviderPassword" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="JobDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="KeyWord" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SkillName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CertificationName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AreaName1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AccountTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProviderTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="String" Name="ProfilePictureURL" Nullable="true" />
+    <Property Type="Int32" Name="Expr1" Nullable="true" />
+    <Property Type="String" Name="CategoryName1" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_Providers_FetchProfile_Result">
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderTypeID" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AccountTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fullname" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="ProviderAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProviderPassword" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountryID" Nullable="true" />
+    <Property Type="String" Name="CountryName" Nullable="true" />
+    <Property Type="String" Name="ProviderTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePictureURL" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="ActiveStatus" Nullable="true" />
+    <Property Type="Boolean" Name="IsLogin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Providers_FetchProviderByEmail_Result">
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderTypeID" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AccountTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fullname" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="ProviderAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProviderPassword" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountryID" Nullable="true" />
+    <Property Type="String" Name="CountryName" Nullable="true" />
+    <Property Type="String" Name="ProviderTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePictureURL" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="ActiveStatus" Nullable="true" />
+    <Property Type="Boolean" Name="IsLogin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Providers_FetchProviderByPassword_Result">
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderTypeID" Nullable="true" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AccountTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fullname" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="ProviderAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProviderPassword" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CountryID" Nullable="true" />
+    <Property Type="String" Name="CountryName" Nullable="true" />
+    <Property Type="String" Name="ProviderTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePictureURL" Nullable="true" />
+    <Property Type="Int32" Name="CategoryID" Nullable="true" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="ActiveStatus" Nullable="true" />
+    <Property Type="Boolean" Name="IsLogin" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_Providers_Search_Result">
+    <Property Type="String" Name="ProfilePictureURL" Nullable="true" />
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="String" Name="Fullname" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SearchResult" Nullable="true" MaxLength="349" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderTypes_Fetch_Result">
+    <Property Type="Int32" Name="ProviderTypeID" Nullable="false" />
+    <Property Type="String" Name="ProviderTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderVideo_Fetch_Result">
+    <Property Type="Int32" Name="ProviderVideoID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="VideoDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VideoURL" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_ProviderVideo_FetchByProviderID_Result">
+    <Property Type="Int32" Name="ProviderVideoID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="VideoDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="VideoURL" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_Skills_Fetch_Result">
+    <Property Type="Int32" Name="SkillID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="String" Name="SkillName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SkillDescription" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_Skills_FetchByProvider_Result">
+    <Property Type="Int32" Name="SkillID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="AreaID" Nullable="true" />
+    <Property Type="String" Name="SkillName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SkillDescription" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_Social_FetchProfilePicture_Result">
+    <Property Type="Int32" Name="SocialID" Nullable="false" />
+    <Property Type="String" Name="ProfilePictureURL" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_Social_FetchSearch_Result">
+    <Property Type="Int32" Name="SocialID" Nullable="false" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SocialPassword" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SocialType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsOnline" Nullable="true" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePictureURL" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateOfBirth" Nullable="true" />
+    <Property Type="String" Name="CountryID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fullname" Nullable="true" MaxLength="152" />
+  </ComplexType>
+  <ComplexType Name="SN_Social_FetchSuggestedFriend_Result">
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Middlename" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePictureURL" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_SocialEducation_Fetch_Result">
+    <Property Type="Int32" Name="SocialEducationID" Nullable="false" />
+    <Property Type="String" Name="InstitutionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="YearFrom" Nullable="true" />
+    <Property Type="Int32" Name="YearTo" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Course" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DegreeObtained" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_SocialEducation_FetchBySocialID_Result">
+    <Property Type="Int32" Name="SocialEducationID" Nullable="false" />
+    <Property Type="String" Name="InstitutionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="YearFrom" Nullable="true" />
+    <Property Type="Int32" Name="YearTo" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="String" Name="Course" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DegreeObtained" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_SocialEmployements_Fetch_Result">
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="YearEmployed" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="YearLeft" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Position" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="SocialJobID" Nullable="false" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_SocialEmployements_FetchBySocialID_Result">
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="YearEmployed" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="YearLeft" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Position" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="SocialJobID" Nullable="false" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_SocialFriend_FetchOnlineList_Result">
+    <Property Type="String" Name="FriendName" Nullable="true" MaxLength="152" />
+    <Property Type="Boolean" Name="IsOnline" Nullable="true" />
+    <Property Type="Int32" Name="FriendID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_SocialFriends_Fetch_Result">
+    <Property Type="Int32" Name="SocialFriendID" Nullable="false" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="Int32" Name="FriendID" Nullable="true" />
+    <Property Type="DateTime" Name="DateRequested" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Expr1" Nullable="false" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsOnline" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsApproved" Nullable="true" />
+    <Property Type="DateTime" Name="DateApproved" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="InvitationID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SN_SocialFriends_FetchBySocialID_Result">
+    <Property Type="Int32" Name="SocialFriendID" Nullable="false" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="Int32" Name="FriendID" Nullable="true" />
+    <Property Type="DateTime" Name="DateRequested" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Expr1" Nullable="false" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsOnline" Nullable="true" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsApproved" Nullable="true" />
+    <Property Type="DateTime" Name="DateApproved" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="InvitationID" Nullable="true" />
+    <Property Type="String" Name="Fullname" Nullable="true" MaxLength="152" />
+  </ComplexType>
+  <ComplexType Name="SN_SocialLogs_FetchMostRecent_Result">
+    <Property Type="Int32" Name="SocialLogID" Nullable="false" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="DateTime" Name="LoginDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SN_SocialPosts_FetchByFriend_Result">
+    <Property Type="Int32" Name="SocialPostID" Nullable="false" />
+    <Property Type="Int32" Name="SocialID" Nullable="true" />
+    <Property Type="DateTime" Name="DatePosted" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ContentType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Message" Nullable="true" />
+    <Property Type="String" Name="MessageFileURL" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="SN_Subscription_Fetch_Result">
+    <Property Type="Int32" Name="SubscriptionID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IsComplete" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="PaymentID" Nullable="true" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SN_Subscription_FetchActive_Result">
+    <Property Type="Int32" Name="SubscriptionID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="false" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IsComplete" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="PaymentID" Nullable="true" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IsExisting" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SN_SubscriptionInvoice_Fetch_Result">
+    <Property Type="Int32" Name="InvoiceID" Nullable="false" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="Int32" Name="SubscriptionID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="String" Name="InvoiceDescription" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Expr1" Nullable="false" />
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="IsComplete" Nullable="true" />
+    <Property Type="Int32" Name="PaymentID" Nullable="true" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+  </ComplexType>
+  <ComplexType Name="SN_SubscriptionPayment_Fetch_Result">
+    <Property Type="Int32" Name="PaymentID" Nullable="false" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="InvoiceID" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="ProviderID" Nullable="true" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MiddleName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="InvoiceDescription" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SYS_AccountType_Fetch_Result">
+    <Property Type="Int32" Name="AccountTypeID" Nullable="false" />
+    <Property Type="String" Name="AccountTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SYS_Banks_Fetch_Result">
+    <Property Type="Int32" Name="BankID" Nullable="false" />
+    <Property Type="String" Name="BankName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SYS_Country_Fetch_Result">
+    <Property Type="Int32" Name="CountryID" Nullable="false" />
+    <Property Type="String" Name="CountryName" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SYS_Degrees_Fetch_Result">
+    <Property Type="Int32" Name="DegreeID" Nullable="false" />
+    <Property Type="String" Name="DegreeName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SYS_Roles_Fetch_Result">
+    <Property Type="Int32" Name="RoleID" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SYS_Users_Fetch_Result">
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="Firstname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Lastname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Middlename" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="RoleID" Nullable="true" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="SN_ProviderProfile">
+    <Key>
+      <PropertyRef Name="ProviderID" />
+    </Key>
+    <Property Name="ProviderID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderTypeID" Type="Int32" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="JobDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KeyWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CertificationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_VW_Areas">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="Int32" Nullable="false" />
+    <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AreaImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CategoryImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_ChartMessages">
+    <Key>
+      <PropertyRef Name="ChartMessageID" />
+    </Key>
+    <Property Name="ChartMessageID" Type="Int32" Nullable="false" />
+    <Property Name="SocialID" Type="Int32" />
+    <Property Name="Message" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="MessageToID" Type="Int32" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_CustomerJobs">
+    <Key>
+      <PropertyRef Name="CustomerPostID" />
+      <PropertyRef Name="Firstname" />
+    </Key>
+    <Property Name="CustomerPostID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="PostMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TimeLineInHours" Type="Int32" />
+    <Property Name="FeeFrom" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FeeTo" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Midllename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="Firstname" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Midllename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="CustomerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="CustomerActive" Type="Boolean" />
+    <Property Name="IsLogin" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SN_vw_Dispute">
+    <Key>
+      <PropertyRef Name="DisputeID" />
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="DisputeID" Type="Int32" Nullable="false" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="DisputeMessage" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="ProviderResponse" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateResponded" Type="DateTime" Precision="3" />
+    <Property Name="IsAdminApproved" Type="Boolean" />
+    <Property Name="IsTime" Type="Boolean" />
+    <Property Name="IsJobSatisfaction" Type="Boolean" />
+    <Property Name="DateApproved" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedBy" Type="Int32" />
+    <Property Name="PackageID" Type="Int32" />
+    <Property Name="CustomerName" Type="String" MaxLength="152" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderName" Type="String" MaxLength="203" FixedLength="false" Unicode="false" />
+    <Property Name="JobCompletionRating" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="SN_vw_Invoices">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="CustomerName" Type="String" MaxLength="152" FixedLength="false" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_Jobs">
+    <Key>
+      <PropertyRef Name="JobID" />
+      <PropertyRef Name="PackageName" />
+    </Key>
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="PackageID" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceID" Type="Int32" />
+    <Property Name="IsAccepted" Type="Boolean" />
+    <Property Name="DateAccepted" Type="DateTime" Precision="3" />
+    <Property Name="ProviderComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsComplete" Type="Boolean" />
+    <Property Name="IsCustomerComplete" Type="Boolean" />
+    <Property Name="DateCustomerComplete" Type="DateTime" Precision="3" />
+    <Property Name="ProviderName" Type="String" MaxLength="203" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="152" FixedLength="false" Unicode="false" />
+    <Property Name="PackageName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PackageDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AreaID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_vw_Messages">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="Int32" Nullable="false" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Message" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SourceID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="IsReade" Type="Boolean" />
+    <Property Name="PackageID" Type="Int32" />
+    <Property Name="CustomerName" Type="String" MaxLength="152" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderName" Type="String" MaxLength="203" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_VW_Payments">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="JobID" />
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="PaymentID" Type="Int32" Nullable="false" />
+    <Property Name="PaymentDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="152" FixedLength="false" Unicode="false" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_PostComments">
+    <Key>
+      <PropertyRef Name="PostCommentID" />
+      <PropertyRef Name="SocialPostID" />
+    </Key>
+    <Property Name="PostCommentID" Type="Int32" Nullable="false" />
+    <Property Name="PostID" Type="Int32" />
+    <Property Name="SocialID" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="SocialPostID" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_Proposals">
+    <Key>
+      <PropertyRef Name="ProposalID" />
+      <PropertyRef Name="CustomerPostID" />
+      <PropertyRef Name="ProviderID" />
+    </Key>
+    <Property Name="ProposalID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerPostID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" Nullable="false" />
+    <Property Name="ProposedTimeLine" Type="Int32" />
+    <Property Name="ProposedAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateaCreated" Type="DateTime" Precision="3" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="PostMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TimeLineInHours" Type="Int32" />
+    <Property Name="FeeFrom" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FeeTo" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SN_vw_ProviderAreas">
+    <Key>
+      <PropertyRef Name="ProviderAreaID" />
+    </Key>
+    <Property Name="ProviderAreaID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="AreaID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_ProviderBanks">
+    <Key>
+      <PropertyRef Name="ProviderBankID" />
+    </Key>
+    <Property Name="ProviderBankID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="BankID" Type="Int32" />
+    <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SortCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountTypeID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_vw_ProviderCategory">
+    <Key>
+      <PropertyRef Name="ProviderCategoryID" />
+    </Key>
+    <Property Name="ProviderCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_ProviderCertification">
+    <Key>
+      <PropertyRef Name="ProviderCertificationID" />
+    </Key>
+    <Property Name="ProviderCertificationID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="CertificationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearAchived" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CertificationProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_VW_ProviderDocuments">
+    <Key>
+      <PropertyRef Name="ProviderDocumentID" />
+    </Key>
+    <Property Name="ProviderDocumentID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="DocumentDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_ProviderEducation">
+    <Key>
+      <PropertyRef Name="ProviderEducationID" />
+    </Key>
+    <Property Name="ProviderEducationID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="InstitutionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DegreeID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="YearObtained" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DegreeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_VW_ProviderJobs">
+    <Key>
+      <PropertyRef Name="ProviderJobID" />
+    </Key>
+    <Property Name="ProviderJobID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="JobDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_ProviderKeyWords">
+    <Key>
+      <PropertyRef Name="ProviderKeyWordID" />
+    </Key>
+    <Property Name="ProviderKeyWordID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="KeyWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_ProviderPackages">
+    <Key>
+      <PropertyRef Name="ProviderPackageID" />
+      <PropertyRef Name="PackageName" />
+      <PropertyRef Name="ProviderAreaID" />
+    </Key>
+    <Property Name="ProviderPackageID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="AreaID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="PackageName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PackageDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Timeline" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimelineType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderAreaID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SN_VW_ProviderPictures">
+    <Key>
+      <PropertyRef Name="ProviderPictureID" />
+    </Key>
+    <Property Name="ProviderPictureID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="PictureDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PictureURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_ProviderProfile">
+    <Key>
+      <PropertyRef Name="ProviderID" />
+    </Key>
+    <Property Name="ProviderID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderTypeID" Type="Int32" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fullname" Type="String" MaxLength="203" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="JobDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KeyWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CertificationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AreaID" Type="Int32" />
+    <Property Name="ProfilePictureURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Expr1" Type="Int32" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_VW_ProviderRating">
+    <Key>
+      <PropertyRef Name="ProviderRating" />
+    </Key>
+    <Property Name="ProviderRating" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="RatingScore" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_ProviderReceipt">
+    <Key>
+      <PropertyRef Name="ProviderReceiptID" />
+    </Key>
+    <Property Name="ProviderReceiptID" Type="Int32" Nullable="false" />
+    <Property Name="JobID" Type="Int32" />
+    <Property Name="DateReceived" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PackageID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_vw_Providers">
+    <Key>
+      <PropertyRef Name="ProviderID" />
+    </Key>
+    <Property Name="ProviderID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderTypeID" Type="Int32" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fullname" Type="String" MaxLength="203" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Longitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="CountryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProfilePictureURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveStatus" Type="Boolean" />
+    <Property Name="IsLogin" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SN_VW_ProviderTypes">
+    <Key>
+      <PropertyRef Name="ProviderTypeID" />
+    </Key>
+    <Property Name="ProviderTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProviderTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_VW_ProviderVideo">
+    <Key>
+      <PropertyRef Name="ProviderVideoID" />
+    </Key>
+    <Property Name="ProviderVideoID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="VideoDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VideoURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_VW_ProviderVideos">
+    <Key>
+      <PropertyRef Name="ProviderVideoID" />
+    </Key>
+    <Property Name="ProviderVideoID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="VideoDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VideoURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_Skills">
+    <Key>
+      <PropertyRef Name="SkillID" />
+      <PropertyRef Name="ProviderAreaID" />
+    </Key>
+    <Property Name="SkillID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="AreaID" Type="Int32" />
+    <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SkillDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="AccountTypeID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderAreaID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_SocialEducation">
+    <Key>
+      <PropertyRef Name="SocialEducationID" />
+    </Key>
+    <Property Name="SocialEducationID" Type="Int32" Nullable="false" />
+    <Property Name="InstitutionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearFrom" Type="Int32" />
+    <Property Name="YearTo" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DegreeObtained" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_SocialEmployements">
+    <Key>
+      <PropertyRef Name="SocialJobID" />
+    </Key>
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearEmployed" Type="DateTime" Precision="3" />
+    <Property Name="YearLeft" Type="DateTime" Precision="3" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SocialID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="SocialJobID" Type="Int32" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_VW_SocialFriends">
+    <Key>
+      <PropertyRef Name="SocialFriendID" />
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="SocialFriendID" Type="Int32" Nullable="false" />
+    <Property Name="SocialID" Type="Int32" />
+    <Property Name="FriendID" Type="Int32" />
+    <Property Name="DateRequested" Type="DateTime" Precision="3" />
+    <Property Name="Expr1" Type="Int32" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsOnline" Type="Boolean" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsApproved" Type="Boolean" />
+    <Property Name="DateApproved" Type="DateTime" Precision="3" />
+    <Property Name="InvitationID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SN_vw_SocialProfile">
+    <Key>
+      <PropertyRef Name="SocialID" />
+    </Key>
+    <Property Name="SocialID" Type="Int32" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="SocialType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsOnline" Type="Boolean" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProfilePictureURL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="CountryID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InstitutionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Course" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DegreeObtained" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="YearEmployed" Type="DateTime" Precision="3" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_Subscription">
+    <Key>
+      <PropertyRef Name="SubscriptionID" />
+      <PropertyRef Name="ProviderID" />
+      <PropertyRef Name="AccountTypeID" />
+    </Key>
+    <Property Name="SubscriptionID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" Nullable="false" />
+    <Property Name="AccountTypeID" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="IsComplete" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentID" Type="Int32" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_SubscriptionInvoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="AccountTypeID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="SubscriptionID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InvoiceDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr1" Type="Int32" Nullable="false" />
+    <Property Name="AccountTypeID" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="IsComplete" Type="Int32" />
+    <Property Name="PaymentID" Type="Int32" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="ProviderName" Type="String" MaxLength="203" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SN_vw_SubscriptionPayment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="Int32" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceID" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ProviderID" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SYS_VW_AccountType">
+    <Key>
+      <PropertyRef Name="AccountTypeID" />
+    </Key>
+    <Property Name="AccountTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SYS_VW_Banks">
+    <Key>
+      <PropertyRef Name="BankID" />
+    </Key>
+    <Property Name="BankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SYS_VW_Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SYS_VW_Degrees">
+    <Key>
+      <PropertyRef Name="DegreeID" />
+    </Key>
+    <Property Name="DegreeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DegreeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SYS_vw_Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SYS_VW_Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="LastLoginDate" Type="DateTime" Precision="3" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

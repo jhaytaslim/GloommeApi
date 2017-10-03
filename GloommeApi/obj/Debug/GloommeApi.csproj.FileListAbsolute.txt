@@ -1,0 +1,155 @@
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\ApplicationInsights.config
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\csc.exe
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\csc.exe.config
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\csc.rsp
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\csi.exe
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\csi.rsp
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\System.AppContext.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\vbc.exe
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\vbc.exe.config
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\vbc.rsp
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\VBCSCompiler.exe
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\GloommeApi.dll.config
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\GloommeApi.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\GloommeApi.pdb
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Antlr3.Runtime.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.AI.Web.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Newtonsoft.Json.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Net.Http.Formatting.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Helpers.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Http.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Http.WebHost.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Mvc.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Optimization.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Razor.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.WebPages.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.WebPages.Razor.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\WebGrease.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Newtonsoft.Json.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Net.Http.Formatting.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Helpers.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Http.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Http.WebHost.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Mvc.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Optimization.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.Razor.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.WebPages.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\System.Web.WebPages.Razor.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Antlr3.Runtime.pdb
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\bin\Microsoft.AI.Web.xml
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\obj\Debug\GloommeApi.csprojResolveAssemblyReference.cache
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\obj\Debug\GloommeApi.dll
+C:\Users\Gloomme\documents\visual studio 2017\Projects\GloommeApi\GloommeApi\obj\Debug\GloommeApi.pdb
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\ApplicationInsights.config
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\csc.exe
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\csc.exe.config
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\csc.rsp
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\csi.exe
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\csi.rsp
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\System.AppContext.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\System.Collections.Immutable.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\System.IO.FileSystem.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\System.Reflection.Metadata.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\vbc.exe
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\vbc.exe.config
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\vbc.rsp
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\VBCSCompiler.exe
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\roslyn\VBCSCompiler.exe.config
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\GloommeApi.dll.config
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\GloommeApi.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\GloommeApi.pdb
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Antlr3.Runtime.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.Agent.Intercept.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.DependencyCollector.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.Web.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.WindowsServer.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.ApplicationInsights.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.Web.Infrastructure.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Newtonsoft.Json.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Net.Http.Formatting.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Helpers.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Http.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Http.WebHost.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Mvc.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Optimization.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Razor.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.WebPages.Deployment.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.WebPages.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.WebPages.Razor.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\WebGrease.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Newtonsoft.Json.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Net.Http.Formatting.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Helpers.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Http.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Http.WebHost.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Mvc.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Optimization.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Razor.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.WebPages.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.WebPages.Deployment.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.WebPages.Razor.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Antlr3.Runtime.pdb
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.ApplicationInsights.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.DependencyCollector.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.WindowsServer.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.Web.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\obj\Debug\GloommeApi.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\obj\Debug\GloommeApi.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\obj\Debug\GloommeApi.pdb
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Cors.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Http.Cors.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Http.Cors.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.SqlServer.dll
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.SqlServer.xml
