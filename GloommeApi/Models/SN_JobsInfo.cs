@@ -42,4 +42,19 @@ namespace GloommeApi.Models
 
         #endregion
     }
+
+    public class SN_ApproveJob
+    {
+        [Required]
+        public int JobID { get; set; }
+
+        [Required]
+        public bool IsAccepted { get; set; }
+
+        [Required]
+        public string Comment { get; set; }
+
+        public decimal Amount { get; set; }
+
+    }
 }

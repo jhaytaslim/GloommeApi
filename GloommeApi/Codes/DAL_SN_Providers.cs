@@ -130,6 +130,32 @@ namespace GloommeApi.Codes
                 cn.Close();
             }
         }
+
+
+        public IEnumerable<SN_vw_ProviderAreas> FetchProviderByAreas(int AreaID)
+        {
+            IEnumerable<SN_vw_ProviderAreas> results = new List<SN_vw_ProviderAreas>();
+            try
+            {
+                using (var context = new SocialNetworkEntities2())
+                {
+                    results = context.SN_vw_ProviderAreas.Where(p => p.AreaID == AreaID)
+                          .ToList();
+                    foreach(var row in results)
+                    {
+                        if (Convert.ToInt32(row.AccountTypeID) == 2)
+                        {
+                            row.CompanyName = row.Firstname + " " + row.Lastname;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                APP_BLL.WriteLog(ex.Message + ex.StackTrace);
+            }
+            return results;
+        }
         public DataSet SN_Providers_FetchByCategory(int CategoryID)
         {
             try

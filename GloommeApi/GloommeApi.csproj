@@ -249,6 +249,9 @@
     <Compile Include="Models\SN_Category.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_Category_FetchFirstX_Result.cs">
+      <DependentUpon>GloommeContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SN_Category_Fetch_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
@@ -326,7 +329,7 @@
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SN_JobsInfo.cs" />
-    <Compile Include="Models\SN_JobsReject.cs" />
+    <Compile Include="Models\SN_JobsObj.cs" />
     <Compile Include="Models\SN_Jobs_FetchByCustomerID_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>

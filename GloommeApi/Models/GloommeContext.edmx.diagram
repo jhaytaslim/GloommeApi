@@ -15,12 +15,12 @@
         <EntityTypeShape EntityType="SocialNetworkModel.SN_Dispute" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_Invitation" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_Invoices" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_Jobs" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_Jobs" Width="1.5" PointX="8.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_Messages" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_Payments" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_PostComments" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_Proposals" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_ProviderAreas" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_ProviderAreas" Width="2.125" PointX="2.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_ProviderBanks" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_ProviderCategory" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_ProviderCertification" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
@@ -67,20 +67,20 @@
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_PostComments" Width="1.5" PointX="4.75" PointY="21.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_Proposals" Width="1.5" PointX="6.75" PointY="21.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderAreas" Width="1.5" PointX="21.75" PointY="8.75" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderBanks" Width="1.5" PointX="21.75" PointY="13.75" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderCategory" Width="1.5" PointX="21.75" PointY="18.75" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderCertification" Width="1.5" PointX="21.75" PointY="22.75" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderBanks" Width="1.75" PointX="21.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderCategory" Width="1.875" PointX="21.75" PointY="18.75" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderCertification" Width="1.875" PointX="21.375" PointY="22" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderDocuments" Width="1.5" PointX="23.75" PointY="0.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderEducation" Width="1.5" PointX="23.75" PointY="4.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderJobs" Width="1.5" PointX="23.75" PointY="9.75" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderKeyWords" Width="1.5" PointX="23.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderKeyWords" Width="1.75" PointX="23.75" PointY="13.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderPackages" Width="1.5" PointX="23.75" PointY="17.75" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderPictures" Width="1.5" PointX="23.75" PointY="22.75" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderProfile" Width="1.5" PointX="0.75" PointY="24.75" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderRating" Width="1.5" PointX="8.75" PointY="24.75" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderReceipt" Width="1.5" PointX="10.75" PointY="24.75" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderPictures" Width="1.75" PointX="23.375" PointY="22.625" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderProfile" Width="2.125" PointX="0.625" PointY="23.5" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderRating" Width="2.125" PointX="8.125" PointY="23.5" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderReceipt" Width="1.875" PointX="10.75" PointY="24.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_Providers" Width="1.5" PointX="25.75" PointY="0.75" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderTypes" Width="1.5" PointX="2.75" PointY="25.75" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderTypes" Width="2" PointX="3.125" PointY="23.875" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderVideo" Width="1.5" PointX="25.75" PointY="8.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderVideos" Width="1.5" PointX="25.75" PointY="12.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_Skills" Width="1.5" PointX="25.75" PointY="16.75" />

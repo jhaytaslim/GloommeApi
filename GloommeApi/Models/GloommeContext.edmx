@@ -1474,6 +1474,9 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
         <Function Name="SN_Category_Fetch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CategoryID" Type="int" Mode="In" />
         </Function>
+        <Function Name="SN_Category_FetchFirstX" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Number" Type="int" Mode="In" />
+        </Function>
         <Function Name="SN_Category_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CategoryName" Type="varchar" Mode="In" />
           <Parameter Name="CreatedBy" Type="int" Mode="In" />
@@ -2147,6 +2150,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Parameter Name="IPAddress" Type="varchar" Mode="In" />
           <Parameter Name="Longitude" Type="varchar" Mode="In" />
           <Parameter Name="Latitude" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNo" Type="varchar" Mode="In" />
         </Function>
         <Function Name="SN_Providers_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Username" Type="varchar" Mode="In" />
@@ -4250,6 +4254,9 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySet Name="SYS_VW_Degrees" EntityType="SocialNetworkModel.SYS_VW_Degrees" />
           <EntitySet Name="SYS_vw_Roles" EntityType="SocialNetworkModel.SYS_vw_Roles" />
           <EntitySet Name="SYS_VW_Users" EntityType="SocialNetworkModel.SYS_VW_Users" />
+          <FunctionImport Name="SN_Category_FetchFirstX" ReturnType="Collection(SocialNetworkModel.SN_Category_FetchFirstX_Result)">
+          <Parameter Name="Number" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="ProviderPictures_Fetch_Result">
           <Property Type="Int32" Name="ProviderPictureID" Nullable="false" />
@@ -6241,6 +6248,14 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Property Name="IsActive" Type="Boolean" />
           <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="SN_Category_FetchFirstX_Result">
+          <Property Type="Int32" Name="CategoryID" Nullable="false" />
+          <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="true" />
+          <Property Type="String" Name="CategoryImageURL" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6425,6 +6440,17 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
                 <ScalarProperty Name="DateCustomerComplete" ColumnName="DateCustomerComplete" />
                 <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
               </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="SocialNetworkModel.SN_Jobs">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="SocialNetworkModel.Store.SN_Jobs_Insert">
+                  <ScalarProperty Name="Amount" ParameterName="Amount" />
+                  <ScalarProperty Name="Comment" ParameterName="Comment" />
+                  <ScalarProperty Name="PackageID" ParameterName="PackageID" />
+                  <ScalarProperty Name="ProviderID" ParameterName="ProviderID" />
+                  <ScalarProperty Name="CustomerID" ParameterName="CustomerID" />
+                </InsertFunction>
+              </ModificationFunctionMapping>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SN_Messages">
@@ -9255,6 +9281,18 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SN_Category_FetchFirstX" FunctionName="SocialNetworkModel.Store.SN_Category_FetchFirstX">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Category_FetchFirstX_Result">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CategoryImageURL" ColumnName="CategoryImageURL" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

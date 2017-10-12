@@ -1469,6 +1469,9 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
   <Function Name="SN_Category_Fetch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CategoryID" Type="int" Mode="In" />
   </Function>
+  <Function Name="SN_Category_FetchFirstX" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Number" Type="int" Mode="In" />
+  </Function>
   <Function Name="SN_Category_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CategoryName" Type="varchar" Mode="In" />
     <Parameter Name="CreatedBy" Type="int" Mode="In" />
@@ -2142,6 +2145,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
     <Parameter Name="IPAddress" Type="varchar" Mode="In" />
     <Parameter Name="Longitude" Type="varchar" Mode="In" />
     <Parameter Name="Latitude" Type="varchar" Mode="In" />
+    <Parameter Name="PhoneNo" Type="varchar" Mode="In" />
   </Function>
   <Function Name="SN_Providers_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Username" Type="varchar" Mode="In" />

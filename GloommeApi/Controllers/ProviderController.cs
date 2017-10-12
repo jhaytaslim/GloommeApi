@@ -49,7 +49,7 @@ namespace GloommeApi.Controllers
         DAL_SN_Packages DAL_PP = new DAL_SN_Packages();
         DAL_SN_Bank DAL_PB = new DAL_SN_Bank();
         DAL_SN_SearchWords DAL_PS = new DAL_SN_SearchWords();
-
+        DAL_SN_Providers DSP = new DAL_SN_Providers();
         // GET api/<controller>
         [HttpGet]
         [Route("login")]
@@ -878,5 +878,30 @@ namespace GloommeApi.Controllers
         }
 
         #endregion
+
+        #region Fetch
+        [HttpGet]
+        public IHttpActionResult GetProvider(int AreaID)
+        {
+            try
+            {
+                if (AreaID != 0 && AreaID != null)
+                {
+                    var ProviderList = DSP.FetchProviderByAreas(AreaID).ToList();
+                    return Ok(ProviderList);
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch (Exception ex)
+            {
+                APP_BLL.WriteLog(ex.Message + ex.StackTrace);
+                return InternalServerError(ex);
+            }
+        }
+        #endregion
+
     }
 }

@@ -180,6 +180,17 @@
           <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
         </MappingFragment>
       </EntityTypeMapping>
+      <EntityTypeMapping TypeName="SocialNetworkModel.SN_Jobs">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="SocialNetworkModel.Store.SN_Jobs_Insert">
+            <ScalarProperty Name="Amount" ParameterName="Amount" />
+            <ScalarProperty Name="Comment" ParameterName="Comment" />
+            <ScalarProperty Name="PackageID" ParameterName="PackageID" />
+            <ScalarProperty Name="ProviderID" ParameterName="ProviderID" />
+            <ScalarProperty Name="CustomerID" ParameterName="CustomerID" />
+          </InsertFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SN_Messages">
       <EntityTypeMapping TypeName="SocialNetworkModel.SN_Messages">
@@ -3000,5 +3011,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SN_Category_FetchFirstX" FunctionName="SocialNetworkModel.Store.SN_Category_FetchFirstX">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Category_FetchFirstX_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CategoryImageURL" ColumnName="CategoryImageURL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

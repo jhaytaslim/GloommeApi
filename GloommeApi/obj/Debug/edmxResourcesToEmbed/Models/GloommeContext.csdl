@@ -982,6 +982,9 @@
     <EntitySet Name="SYS_VW_Degrees" EntityType="SocialNetworkModel.SYS_VW_Degrees" />
     <EntitySet Name="SYS_vw_Roles" EntityType="SocialNetworkModel.SYS_vw_Roles" />
     <EntitySet Name="SYS_VW_Users" EntityType="SocialNetworkModel.SYS_VW_Users" />
+    <FunctionImport Name="SN_Category_FetchFirstX" ReturnType="Collection(SocialNetworkModel.SN_Category_FetchFirstX_Result)">
+      <Parameter Name="Number" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="ProviderPictures_Fetch_Result">
     <Property Type="Int32" Name="ProviderPictureID" Nullable="false" />
@@ -2973,4 +2976,12 @@
     <Property Name="IsActive" Type="Boolean" />
     <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
+  <ComplexType Name="SN_Category_FetchFirstX_Result">
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="CategoryImageURL" Nullable="true" />
+  </ComplexType>
 </Schema>

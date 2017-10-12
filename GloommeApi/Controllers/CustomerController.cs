@@ -79,5 +79,7 @@ namespace GloommeApi.Controllers
                 return InternalServerError(ex);
             }
         }
+
+        //[HttpGet]
     }
 }

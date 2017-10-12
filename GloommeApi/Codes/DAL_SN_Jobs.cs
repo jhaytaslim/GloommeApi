@@ -14,6 +14,7 @@ namespace GloommeApi.Codes
     {
         HttpContext context;
         SqlConnection cn = new SqlConnection();
+        SocialNetworkEntities2 ctx = new SocialNetworkEntities2();
 
         public DAL_SN_Jobs()
         {
@@ -58,7 +59,27 @@ namespace GloommeApi.Codes
             }
         }
 
-        
+        public DataSet SN_Jobs_FetchByType(int ProviderID, int TypeID)
+        {
+            try
+            {
+                SqlParameter[] @params = { new SqlParameter("@ProviderID", ProviderID) ,
+                                            new SqlParameter("@TypeID", TypeID)};
+                return SqlHelper.ExecuteDataset(cn, CommandType.StoredProcedure, "SN_Jobs_FetchByType", @params);
+            }
+            catch (Exception ex)
+            {
+                APP_BLL.WriteLog(ex.Message + " : " + ex.StackTrace);
+                return null;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
+
         public DataSet SN_Jobs_FetchByProviderID(int ProviderID)
         {
             try
@@ -146,10 +167,35 @@ namespace GloommeApi.Codes
             }
         }
 
+        public bool SN_Jobs_CustomerCompleted(SN_JobsCustomerComlpeted _SN_JobsCustomerComlpeted)
+        {
+            try
+            {
+                SqlParameter[] @params = {
+                                            new SqlParameter("@JobID", _SN_JobsCustomerComlpeted.JobID),
+                                            new SqlParameter("@RatingScore", _SN_JobsCustomerComlpeted.RatingScore)
+                                        };
+                SqlHelper.ExecuteNonQuery(cn, CommandType.StoredProcedure, "SN_Jobs_CustomerCompleted", @params);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                APP_BLL.WriteLog(ex.Message + " : " + ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
         public bool SN_Jobs_Reject(SN_JobsReject _SN_JobsReject)
         {
             try
             {
+                //var context = new SocialNetworkEntities2();
+                //context.SN_ProviderReceipt.
                 SqlParameter[] @params = {
                                             new SqlParameter("@JobID", _SN_JobsReject.JobID),
                                             new SqlParameter("@ProviderComment", _SN_JobsReject.ProviderComment)
@@ -168,6 +214,28 @@ namespace GloommeApi.Codes
             }
         }
 
+        //public bool SN_Jobs_Accept(SN_ApproveJob Job)
+
+        //public bool Jobs_Insert(SN_JobsInfo _SN_Job)
+        //{
+        //    try
+        //    {
+        //        using (ctx)
+        //        {
+        //            SN_Jobs SN = new SN_Jobs
+        //            {
+                        
+        //            };
+        //            ctx.SN_Jobs.Add(SN);
+        //            return true;
+        //        }
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        APP_BLL.WriteLog(ex.InnerException + ex.Message);
+
+        //    }
+        //}
 
 
     }

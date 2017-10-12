@@ -143,7 +143,6 @@ C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.DependencyCollector.xm
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.WindowsServer.xml
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\Microsoft.AI.Web.xml
-C:\inetpub\wwwroot\GloommeApi\GloommeApi\obj\Debug\GloommeApi.csprojResolveAssemblyReference.cache
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\obj\Debug\GloommeApi.dll
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\obj\Debug\GloommeApi.pdb
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\System.Web.Cors.dll
@@ -153,3 +152,4 @@ C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.dll
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.SqlServer.dll
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.xml
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.SqlServer.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\obj\Debug\GloommeApi.csprojResolveAssemblyReference.cache

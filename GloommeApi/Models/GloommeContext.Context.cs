@@ -1118,5 +1118,14 @@ namespace GloommeApi.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SYS_Users_Fetch_Result>("SYS_Users_Fetch", userIDParameter);
         }
+    
+        public virtual ObjectResult<SN_Category_FetchFirstX_Result> SN_Category_FetchFirstX(Nullable<int> number)
+        {
+            var numberParameter = number.HasValue ?
+                new ObjectParameter("Number", number) :
+                new ObjectParameter("Number", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SN_Category_FetchFirstX_Result>("SN_Category_FetchFirstX", numberParameter);
+        }
     }
 }

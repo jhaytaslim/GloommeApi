@@ -18,4 +18,16 @@ namespace GloommeApi.Models
 
         #endregion
     }
+
+    public class SN_JobsCustomerComlpeted
+    {
+        #region " Properties "
+        [Required]
+        public int JobID { get; set; }
+
+        [Required]
+        public int RatingScore { get; set; }
+
+        #endregion
+    }
 }
