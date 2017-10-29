@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\GloommeApi.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -199,7 +200,12 @@
     <Compile Include="Codes\APP_BLL.cs" />
     <Compile Include="Codes\DAL_Misc.cs" />
     <Compile Include="Codes\DAL_SN_Categories.cs" />
+    <Compile Include="Codes\DAL_SN_CustomerJobs.cs" />
+    <Compile Include="Codes\DAL_SN_Invoices.cs" />
     <Compile Include="Codes\DAL_SN_Jobs.cs" />
+    <Compile Include="Codes\DAL_SN_Messages.cs" />
+    <Compile Include="Codes\DAL_SN_Payment.cs" />
+    <Compile Include="Codes\DAL_SN_Proposals.cs" />
     <Compile Include="Codes\DAL_SN_ProviderSkills.cs" />
     <Compile Include="Codes\DAL_SN_Customers.cs" />
     <Compile Include="Codes\DAL_SN_ProviderAreas.cs" />
@@ -212,7 +218,12 @@
     <Compile Include="Codes\DAL_SN_SearchWords.cs" />
     <Compile Include="Codes\DAL_SN_Skills.cs" />
     <Compile Include="Codes\DAL_SN_Specialization.cs" />
+    <Compile Include="Controllers\CustomerJobController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\ProposalController.cs" />
     <Compile Include="Models\GloommeContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -228,6 +239,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GloommeContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MsgDictionary.cs" />
     <Compile Include="Models\ProviderPictures_Fetch_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
@@ -267,6 +279,9 @@
     <Compile Include="Models\SN_Commision.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_CommissionRate.cs">
+      <DependentUpon>GloommeContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SN_CustomerJobs.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
@@ -279,6 +294,7 @@
     <Compile Include="Models\SN_CustomerJobs_Fetch_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_CustomerJobs_Insert.cs" />
     <Compile Include="Models\SN_Customers.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
@@ -336,13 +352,20 @@
     <Compile Include="Models\SN_Jobs_FetchByProviderID_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_Jobs_FetchByType_Result.cs">
+      <DependentUpon>GloommeContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SN_Jobs_Fetch_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SN_Messages.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_MessagesInfo.cs" />
     <Compile Include="Models\SN_Messages_FetchByCustomerID_Result.cs">
+      <DependentUpon>GloommeContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SN_Messages_FetchByProviderIDMobile_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SN_Messages_FetchByProviderID_Result.cs">
@@ -357,9 +380,13 @@
     <Compile Include="Models\SN_Payments_FetchByCustomerID_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_Payments_FetchByJobID_Result.cs">
+      <DependentUpon>GloommeContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SN_Payments_Fetch_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_Payment_InsertInfo.cs" />
     <Compile Include="Models\SN_PostComments.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
@@ -375,12 +402,16 @@
     <Compile Include="Models\SN_Proposals_FetchByCustomerID_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_Proposals_FetchByCustomerPostID_Result.cs">
+      <DependentUpon>GloommeContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SN_Proposals_FetchByProviderID_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SN_Proposals_Fetch_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_Proposal_Insert.cs" />
     <Compile Include="Models\SN_ProviderAreas.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
@@ -389,7 +420,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MiscController.cs" />
     <Compile Include="Controllers\ProviderController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -536,6 +566,12 @@
     <Compile Include="Models\SN_ProviderVideo_Fetch_Result.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_ProviderWallet.cs">
+      <DependentUpon>GloommeContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SN_ProviderWallet_FetchByProviderID_Result.cs">
+      <DependentUpon>GloommeContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SN_Settlement.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
@@ -633,6 +669,9 @@
     <Compile Include="Models\SN_vw_ChartMessages.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SN_vw_Commission.cs">
+      <DependentUpon>GloommeContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SN_vw_CustomerJobs.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
@@ -688,9 +727,6 @@
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SN_VW_ProviderPictures.cs">
-      <DependentUpon>GloommeContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SN_vw_ProviderProfile.cs">
       <DependentUpon>GloommeContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SN_VW_ProviderRating.cs">

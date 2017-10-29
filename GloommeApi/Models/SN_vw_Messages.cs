@@ -25,5 +25,17 @@ namespace GloommeApi.Models
         public Nullable<int> PackageID { get; set; }
         public string CustomerName { get; set; }
         public string ProviderName { get; set; }
+        public string Comment { get; set; }
+        public Nullable<decimal> Amount { get; set; }
+        public Nullable<System.DateTime> Expr1 { get; set; }
+        public Nullable<int> InvoiceID { get; set; }
+        public Nullable<bool> IsAccepted { get; set; }
+        public Nullable<System.DateTime> DateAccepted { get; set; }
+        public string ProviderComment { get; set; }
+        public Nullable<bool> IsComplete { get; set; }
+        public Nullable<bool> IsCustomerComplete { get; set; }
+        public Nullable<System.DateTime> DateCustomerComplete { get; set; }
+        public Nullable<System.DateTime> DateCompleted { get; set; }
+        public Nullable<int> ProviderTypeID { get; set; }
     }
 }

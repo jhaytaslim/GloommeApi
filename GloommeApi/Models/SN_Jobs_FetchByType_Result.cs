@@ -10,11 +10,9 @@
 namespace GloommeApi.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class SN_vw_Jobs
+    public partial class SN_Jobs_FetchByType_Result
     {
-        public int JobID { get; set; }
         public Nullable<int> CustomerID { get; set; }
         public Nullable<int> ProviderID { get; set; }
         public Nullable<int> PackageID { get; set; }
@@ -37,6 +35,7 @@ namespace GloommeApi.Models
         public string InvoiceNo { get; set; }
         public string InvoiceDescription { get; set; }
         public Nullable<decimal> InvoiceAmount { get; set; }
+        public int JobID { get; set; }
         public Nullable<bool> IsPaid { get; set; }
         public string AreaName { get; set; }
     }

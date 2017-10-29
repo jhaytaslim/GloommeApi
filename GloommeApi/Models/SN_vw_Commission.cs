@@ -12,17 +12,14 @@ namespace GloommeApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SN_vw_Invoices
+    public partial class SN_vw_Commission
     {
-        public int InvoiceID { get; set; }
-        public string InvoiceNo { get; set; }
-        public string InvoiceDescription { get; set; }
-        public Nullable<int> JobID { get; set; }
-        public Nullable<System.DateTime> DateCreated { get; set; }
+        public int CommissionID { get; set; }
+        public int JobID { get; set; }
         public Nullable<decimal> Amount { get; set; }
+        public Nullable<System.DateTime> DateCreated { get; set; }
         public Nullable<int> CustomerID { get; set; }
-        public string CustomerName { get; set; }
-        public string Comment { get; set; }
-        public Nullable<bool> IsPaid { get; set; }
+        public Nullable<int> ProviderID { get; set; }
+        public Nullable<decimal> JobAmount { get; set; }
     }
 }

@@ -10,17 +10,22 @@
 namespace GloommeApi.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class SN_vw_Jobs
+    public partial class SN_Messages_FetchByProviderIDMobile_Result
     {
-        public int JobID { get; set; }
-        public Nullable<int> CustomerID { get; set; }
+        public int MessageID { get; set; }
+        public Nullable<int> JobID { get; set; }
         public Nullable<int> ProviderID { get; set; }
+        public Nullable<int> CustomerID { get; set; }
+        public string Message { get; set; }
+        public Nullable<int> SourceID { get; set; }
+        public Nullable<System.DateTime> DateCreated { get; set; }
+        public Nullable<bool> IsReade { get; set; }
         public Nullable<int> PackageID { get; set; }
+        public string CustomerName { get; set; }
         public string Comment { get; set; }
         public Nullable<decimal> Amount { get; set; }
-        public Nullable<System.DateTime> DateCreated { get; set; }
+        public Nullable<System.DateTime> Expr1 { get; set; }
         public Nullable<int> InvoiceID { get; set; }
         public Nullable<bool> IsAccepted { get; set; }
         public Nullable<System.DateTime> DateAccepted { get; set; }
@@ -28,16 +33,9 @@ namespace GloommeApi.Models
         public Nullable<bool> IsComplete { get; set; }
         public Nullable<bool> IsCustomerComplete { get; set; }
         public Nullable<System.DateTime> DateCustomerComplete { get; set; }
+        public Nullable<System.DateTime> DateCompleted { get; set; }
+        public Nullable<int> ProviderTypeID { get; set; }
         public string ProviderName { get; set; }
-        public string CustomerName { get; set; }
-        public string PackageName { get; set; }
-        public string PackageDescription { get; set; }
-        public Nullable<int> AreaID { get; set; }
-        public Nullable<int> CategoryID { get; set; }
-        public string InvoiceNo { get; set; }
-        public string InvoiceDescription { get; set; }
-        public Nullable<decimal> InvoiceAmount { get; set; }
-        public Nullable<bool> IsPaid { get; set; }
-        public string AreaName { get; set; }
+        public string ProviderName1 { get; set; }
     }
 }

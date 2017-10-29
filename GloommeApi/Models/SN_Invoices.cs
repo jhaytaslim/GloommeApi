@@ -20,5 +20,6 @@ namespace GloommeApi.Models
         public Nullable<int> JobID { get; set; }
         public Nullable<System.DateTime> DateCreated { get; set; }
         public Nullable<decimal> Amount { get; set; }
+        public Nullable<bool> IsPaid { get; set; }
     }
 }

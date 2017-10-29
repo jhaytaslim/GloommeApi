@@ -98,6 +98,7 @@ C:\inetpub\wwwroot\GloommeApi\GloommeApi.Tests\bin\Debug\System.Web.Cors.dll
 C:\inetpub\wwwroot\GloommeApi\GloommeApi.Tests\bin\Debug\System.Web.Http.Cors.xml
 C:\inetpub\wwwroot\GloommeApi\GloommeApi.Tests\bin\Debug\EntityFramework.dll
 C:\inetpub\wwwroot\GloommeApi\GloommeApi.Tests\bin\Debug\EntityFramework.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi.Tests\bin\Debug\GloommeApi.xml
 C:\inetpub\wwwroot\GloommeApi\GloommeApi.Tests\bin\Debug\roslyn\csc.exe
 C:\inetpub\wwwroot\GloommeApi\GloommeApi.Tests\bin\Debug\roslyn\csc.exe.config
 C:\inetpub\wwwroot\GloommeApi\GloommeApi.Tests\bin\Debug\roslyn\csc.rsp

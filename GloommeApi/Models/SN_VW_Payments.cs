@@ -25,5 +25,6 @@ namespace GloommeApi.Models
         public string InvoiceNo { get; set; }
         public Nullable<int> ProviderID { get; set; }
         public string Comment { get; set; }
+        public string InvoiceDescription { get; set; }
     }
 }

@@ -98,7 +98,6 @@ namespace GloommeApi.Models
         public virtual DbSet<SN_vw_ProviderKeyWords> SN_vw_ProviderKeyWords { get; set; }
         public virtual DbSet<SN_vw_ProviderPackages> SN_vw_ProviderPackages { get; set; }
         public virtual DbSet<SN_VW_ProviderPictures> SN_VW_ProviderPictures { get; set; }
-        public virtual DbSet<SN_vw_ProviderProfile> SN_vw_ProviderProfile { get; set; }
         public virtual DbSet<SN_VW_ProviderRating> SN_VW_ProviderRating { get; set; }
         public virtual DbSet<SN_vw_ProviderReceipt> SN_vw_ProviderReceipt { get; set; }
         public virtual DbSet<SN_vw_Providers> SN_vw_Providers { get; set; }
@@ -119,6 +118,9 @@ namespace GloommeApi.Models
         public virtual DbSet<SYS_VW_Degrees> SYS_VW_Degrees { get; set; }
         public virtual DbSet<SYS_vw_Roles> SYS_vw_Roles { get; set; }
         public virtual DbSet<SYS_VW_Users> SYS_VW_Users { get; set; }
+        public virtual DbSet<SN_CommissionRate> SN_CommissionRate { get; set; }
+        public virtual DbSet<SN_ProviderWallet> SN_ProviderWallet { get; set; }
+        public virtual DbSet<SN_vw_Commission> SN_vw_Commission { get; set; }
     
         public virtual ObjectResult<ProviderPictures_Fetch_Result> ProviderPictures_Fetch(Nullable<int> providerPictureID)
         {
@@ -1126,6 +1128,73 @@ namespace GloommeApi.Models
                 new ObjectParameter("Number", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SN_Category_FetchFirstX_Result>("SN_Category_FetchFirstX", numberParameter);
+        }
+    
+        public virtual ObjectResult<SN_Jobs_FetchByType_Result> SN_Jobs_FetchByType(Nullable<int> providerID, Nullable<int> typeID)
+        {
+            var providerIDParameter = providerID.HasValue ?
+                new ObjectParameter("ProviderID", providerID) :
+                new ObjectParameter("ProviderID", typeof(int));
+    
+            var typeIDParameter = typeID.HasValue ?
+                new ObjectParameter("TypeID", typeID) :
+                new ObjectParameter("TypeID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SN_Jobs_FetchByType_Result>("SN_Jobs_FetchByType", providerIDParameter, typeIDParameter);
+        }
+    
+        public virtual int SN_Messages_FetchByCustomerIDMobile(Nullable<int> customerID)
+        {
+            var customerIDParameter = customerID.HasValue ?
+                new ObjectParameter("CustomerID", customerID) :
+                new ObjectParameter("CustomerID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SN_Messages_FetchByCustomerIDMobile", customerIDParameter);
+        }
+    
+        public virtual ObjectResult<SN_Messages_FetchByProviderIDMobile_Result> SN_Messages_FetchByProviderIDMobile(Nullable<int> providerID)
+        {
+            var providerIDParameter = providerID.HasValue ?
+                new ObjectParameter("ProviderID", providerID) :
+                new ObjectParameter("ProviderID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SN_Messages_FetchByProviderIDMobile_Result>("SN_Messages_FetchByProviderIDMobile", providerIDParameter);
+        }
+    
+        public virtual ObjectResult<SN_Payments_FetchByJobID_Result> SN_Payments_FetchByJobID(Nullable<int> jobID)
+        {
+            var jobIDParameter = jobID.HasValue ?
+                new ObjectParameter("JobID", jobID) :
+                new ObjectParameter("JobID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SN_Payments_FetchByJobID_Result>("SN_Payments_FetchByJobID", jobIDParameter);
+        }
+    
+        public virtual ObjectResult<SN_Proposals_FetchByCustomerPostID_Result> SN_Proposals_FetchByCustomerPostID(Nullable<int> customerPostID)
+        {
+            var customerPostIDParameter = customerPostID.HasValue ?
+                new ObjectParameter("CustomerPostID", customerPostID) :
+                new ObjectParameter("CustomerPostID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SN_Proposals_FetchByCustomerPostID_Result>("SN_Proposals_FetchByCustomerPostID", customerPostIDParameter);
+        }
+    
+        public virtual ObjectResult<SN_ProviderWallet_FetchByProviderID_Result> SN_ProviderWallet_FetchByProviderID(Nullable<int> providerID)
+        {
+            var providerIDParameter = providerID.HasValue ?
+                new ObjectParameter("ProviderID", providerID) :
+                new ObjectParameter("ProviderID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SN_ProviderWallet_FetchByProviderID_Result>("SN_ProviderWallet_FetchByProviderID", providerIDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> SN_ProviderWallet_FetchSummary(Nullable<int> providerID)
+        {
+            var providerIDParameter = providerID.HasValue ?
+                new ObjectParameter("ProviderID", providerID) :
+                new ObjectParameter("ProviderID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("SN_ProviderWallet_FetchSummary", providerIDParameter);
         }
     }
 }

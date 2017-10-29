@@ -143,6 +143,7 @@ namespace GloommeApi.Codes
             }
         }
 
+       
         public bool SN_Jobs_ProviderCompleted(int JobID)
         {
             try
@@ -214,7 +215,29 @@ namespace GloommeApi.Codes
             }
         }
 
-        //public bool SN_Jobs_Accept(SN_ApproveJob Job)
+        public bool SN_Jobs_Accept(SN_ApproveJob _SN_ApproveJob)
+        {
+            try
+            {
+                SqlParameter[] @params = {
+                                            new SqlParameter("@JobID", _SN_ApproveJob.JobID),
+                                            new SqlParameter("@Amount", _SN_ApproveJob.Amount),
+                                            new SqlParameter("@ProviderComment", _SN_ApproveJob.Comment),
+                                            new SqlParameter("@IsAccepted", _SN_ApproveJob.IsAccepted)
+                                        };
+                SqlHelper.ExecuteNonQuery(cn, CommandType.StoredProcedure, "SN_Jobs_Accept", @params);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                APP_BLL.WriteLog(ex.Message + " : " + ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
 
         //public bool Jobs_Insert(SN_JobsInfo _SN_Job)
         //{

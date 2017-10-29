@@ -10,9 +10,8 @@
 namespace GloommeApi.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class SN_vw_Proposals
+    public partial class SN_Proposals_FetchByCustomerPostID_Result
     {
         public int ProposalID { get; set; }
         public int CustomerPostID { get; set; }
@@ -30,5 +29,6 @@ namespace GloommeApi.Models
         public Nullable<bool> IsAccepted { get; set; }
         public Nullable<System.DateTime> DateAccepted { get; set; }
         public Nullable<int> ProviderTypeID { get; set; }
+        public string ProviderName { get; set; }
     }
 }

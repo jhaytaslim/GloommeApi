@@ -152,4 +152,5 @@ C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.dll
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.SqlServer.dll
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.xml
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\EntityFramework.SqlServer.xml
+C:\inetpub\wwwroot\GloommeApi\GloommeApi\bin\GloommeApi.xml
 C:\inetpub\wwwroot\GloommeApi\GloommeApi\obj\Debug\GloommeApi.csprojResolveAssemblyReference.cache

@@ -46,6 +46,15 @@
           <Property Name="Amount" Type="money" />
           <Property Name="DateCreated" Type="datetime" />
         </EntityType>
+        <EntityType Name="SN_CommissionRate">
+          <Key>
+            <PropertyRef Name="CommissionRateID" />
+          </Key>
+          <Property Name="CommissionRateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProviderRate" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="CustomerRate" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>
         <EntityType Name="SN_CustomerJobs">
           <Key>
             <PropertyRef Name="CustomerPostID" />
@@ -134,6 +143,7 @@
           <Property Name="JobID" Type="int" />
           <Property Name="DateCreated" Type="datetime" />
           <Property Name="Amount" Type="money" />
+          <Property Name="IsPaid" Type="bit" />
         </EntityType>
         <EntityType Name="SN_Jobs">
           <Key>
@@ -377,6 +387,17 @@
           <Property Name="ProviderID" Type="int" />
           <Property Name="VideoDescription" Type="varchar" MaxLength="50" />
           <Property Name="VideoURL" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SN_ProviderWallet">
+          <Key>
+            <PropertyRef Name="ProviderWalletID" />
+          </Key>
+          <Property Name="ProviderWalletID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobID" Type="int" />
+          <Property Name="ProviderID" Type="int" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="PaymentType" Type="varchar" MaxLength="50" />
           <Property Name="DateCreated" Type="datetime" />
         </EntityType>
         <EntityType Name="SN_Settlement">
@@ -666,6 +687,21 @@ warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_ChartMessages' does not ha
           <Property Name="MiddleName" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_Commission' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SN_vw_Commission">
+          <Key>
+            <PropertyRef Name="CommissionID" />
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="CommissionID" Type="int" Nullable="false" />
+          <Property Name="JobID" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="ProviderID" Type="int" />
+          <Property Name="JobAmount" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_CustomerJobs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SN_vw_CustomerJobs">
           <Key>
@@ -752,15 +788,15 @@ warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_Invoices' does not have a 
           <Property Name="CustomerID" Type="int" />
           <Property Name="CustomerName" Type="varchar" MaxLength="152" />
           <Property Name="Comment" Type="varchar(max)" />
+          <Property Name="IsPaid" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_Jobs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SN_vw_Jobs">
           <Key>
-            <PropertyRef Name="JobID" />
             <PropertyRef Name="PackageName" />
+            <PropertyRef Name="JobID" />
           </Key>
-          <Property Name="JobID" Type="int" Nullable="false" />
           <Property Name="CustomerID" Type="int" />
           <Property Name="ProviderID" Type="int" />
           <Property Name="PackageID" Type="int" />
@@ -780,6 +816,12 @@ warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_Jobs' does not have a prim
           <Property Name="PackageDescription" Type="varchar" MaxLength="50" />
           <Property Name="AreaID" Type="int" />
           <Property Name="CategoryID" Type="int" />
+          <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
+          <Property Name="InvoiceDescription" Type="varchar" MaxLength="250" />
+          <Property Name="InvoiceAmount" Type="money" />
+          <Property Name="JobID" Type="int" Nullable="false" />
+          <Property Name="IsPaid" Type="bit" />
+          <Property Name="AreaName" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_Messages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -797,7 +839,19 @@ warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_Messages' does not have a 
           <Property Name="IsReade" Type="bit" />
           <Property Name="PackageID" Type="int" />
           <Property Name="CustomerName" Type="varchar" MaxLength="152" />
-          <Property Name="ProviderName" Type="varchar" MaxLength="203" />
+          <Property Name="Comment" Type="varchar(max)" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="Expr1" Type="datetime" />
+          <Property Name="InvoiceID" Type="int" />
+          <Property Name="IsAccepted" Type="bit" />
+          <Property Name="DateAccepted" Type="datetime" />
+          <Property Name="ProviderComment" Type="varchar(max)" />
+          <Property Name="IsComplete" Type="bit" />
+          <Property Name="IsCustomerComplete" Type="bit" />
+          <Property Name="DateCustomerComplete" Type="datetime" />
+          <Property Name="DateCompleted" Type="datetime" />
+          <Property Name="ProviderTypeID" Type="int" />
+          <Property Name="ProviderName" Type="varchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SocialNetwork.dbo.SN_VW_Payments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -819,6 +873,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SN_VW_Payments' does not have a 
           <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
           <Property Name="ProviderID" Type="int" />
           <Property Name="Comment" Type="varchar(max)" />
+          <Property Name="InvoiceDescription" Type="varchar" MaxLength="250" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_PostComments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -859,6 +914,9 @@ warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_Proposals' does not have a
           <Property Name="FeeFrom" Type="decimal" Precision="18" Scale="2" />
           <Property Name="FeeTo" Type="decimal" Precision="18" Scale="2" />
           <Property Name="IsActive" Type="bit" />
+          <Property Name="IsAccepted" Type="bit" />
+          <Property Name="DateAccepted" Type="datetime" />
+          <Property Name="ProviderTypeID" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_ProviderAreas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1048,12 +1106,9 @@ warning 6002: The table/view 'SocialNetwork.dbo.SN_VW_ProviderPictures' does not
           <Property Name="CompanyName" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_ProviderProfile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6013: The table/view 'SocialNetwork.dbo.SN_vw_ProviderProfile' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="SN_vw_ProviderProfile">
-          <Key>
-            <PropertyRef Name="ProviderID" />
-          </Key>
-          <Property Name="ProviderID" Type="int" Nullable="false" />
+          <Property Name="ProviderID" Type="int" />
           <Property Name="ProviderTypeID" Type="int" />
           <Property Name="AccountTypeID" Type="int" />
           <Property Name="Firstname" Type="varchar" MaxLength="50" />
@@ -1080,7 +1135,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SN_vw_ProviderProfile' does not 
           <Property Name="ProfilePictureURL" Type="varchar(max)" />
           <Property Name="Expr1" Type="int" />
           <Property Name="CategoryName" Type="varchar" MaxLength="50" />
-        </EntityType>
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SocialNetwork.dbo.SN_VW_ProviderRating' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SN_VW_ProviderRating">
@@ -1440,6 +1495,10 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Property Name="IsActive" Type="bit" />
           <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
         </EntityType>
+        <Function Name="GetproviderName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+          <Parameter Name="ProviderID" Type="int" Mode="In" />
+          <Parameter Name="ProviderType" Type="int" Mode="In" />
+        </Function>
         <Function Name="ProviderPictures_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ProviderPictureID" Type="int" Mode="In" />
         </Function>
@@ -1609,6 +1668,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Parameter Name="PaymentType" Type="varchar" Mode="In" />
           <Parameter Name="JobID" Type="int" Mode="In" />
           <Parameter Name="Amount" Type="money" Mode="In" />
+          <Parameter Name="CustomerID" Type="int" Mode="In" />
         </Function>
         <Function Name="SN_Delete_Areas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="AreaID" Type="int" Mode="In" />
@@ -1795,6 +1855,10 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
         <Function Name="SN_Jobs_FetchByProviderID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ProviderID" Type="int" Mode="In" />
         </Function>
+        <Function Name="SN_Jobs_FetchByType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProviderID" Type="int" Mode="In" />
+          <Parameter Name="TypeID" Type="int" Mode="In" />
+        </Function>
         <Function Name="SN_Jobs_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CustomerID" Type="int" Mode="In" />
           <Parameter Name="ProviderID" Type="int" Mode="In" />
@@ -1816,9 +1880,15 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Parameter Name="CustomerID" Type="int" Mode="In" />
           <Parameter Name="JobID" Type="int" Mode="In" />
         </Function>
+        <Function Name="SN_Messages_FetchByCustomerIDMobile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerID" Type="int" Mode="In" />
+        </Function>
         <Function Name="SN_Messages_FetchByProviderID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ProviderID" Type="int" Mode="In" />
           <Parameter Name="JobID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SN_Messages_FetchByProviderIDMobile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProviderID" Type="int" Mode="In" />
         </Function>
         <Function Name="SN_Messages_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="JobID" Type="int" Mode="In" />
@@ -1843,6 +1913,9 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
         </Function>
         <Function Name="SN_Payments_FetchByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CustomerID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SN_Payments_FetchByJobID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="JobID" Type="int" Mode="In" />
         </Function>
         <Function Name="SN_Payments_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CustomerID" Type="int" Mode="In" />
@@ -1879,6 +1952,9 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
         </Function>
         <Function Name="SN_Proposals_FetchByCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CustomerID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SN_Proposals_FetchByCustomerPostID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CustomerPostID" Type="int" Mode="In" />
         </Function>
         <Function Name="SN_Proposals_FetchByProviderID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ProviderId" Type="int" Mode="In" />
@@ -2214,6 +2290,12 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Parameter Name="VideoDescription" Type="varchar" Mode="In" />
           <Parameter Name="VideoURL" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="SN_ProviderWallet_FetchByProviderID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProviderID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SN_ProviderWallet_FetchSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProviderID" Type="int" Mode="In" />
+        </Function>
         <Function Name="SN_Skills_Fetch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SkillID" Type="int" Mode="In" />
         </Function>
@@ -2515,6 +2597,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySet Name="SN_Category" EntityType="Self.SN_Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SN_ChartMessages" EntityType="Self.SN_ChartMessages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SN_Commision" EntityType="Self.SN_Commision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SN_CommissionRate" EntityType="Self.SN_CommissionRate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SN_CustomerJobs" EntityType="Self.SN_CustomerJobs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SN_Customers" EntityType="Self.SN_Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SN_CustomerWallet" EntityType="Self.SN_CustomerWallet" Schema="dbo" store:Type="Tables" />
@@ -2541,6 +2624,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySet Name="SN_Providers" EntityType="Self.SN_Providers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SN_ProviderTypes" EntityType="Self.SN_ProviderTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SN_ProviderVideo" EntityType="Self.SN_ProviderVideo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SN_ProviderWallet" EntityType="Self.SN_ProviderWallet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SN_Settlement" EntityType="Self.SN_Settlement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SN_Skills" EntityType="Self.SN_Skills" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SN_Social" EntityType="Self.SN_Social" Schema="dbo" store:Type="Tables" />
@@ -2630,6 +2714,17 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
     [SN_vw_ChartMessages].[MiddleName] AS [MiddleName]
     FROM [dbo].[SN_vw_ChartMessages] AS [SN_vw_ChartMessages]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="SN_vw_Commission" EntityType="Self.SN_vw_Commission" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SN_vw_Commission].[CommissionID] AS [CommissionID], 
+    [SN_vw_Commission].[JobID] AS [JobID], 
+    [SN_vw_Commission].[Amount] AS [Amount], 
+    [SN_vw_Commission].[DateCreated] AS [DateCreated], 
+    [SN_vw_Commission].[CustomerID] AS [CustomerID], 
+    [SN_vw_Commission].[ProviderID] AS [ProviderID], 
+    [SN_vw_Commission].[JobAmount] AS [JobAmount]
+    FROM [dbo].[SN_vw_Commission] AS [SN_vw_Commission]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="SN_vw_CustomerJobs" EntityType="Self.SN_vw_CustomerJobs" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [SN_vw_CustomerJobs].[CustomerPostID] AS [CustomerPostID], 
@@ -2700,12 +2795,12 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
     [SN_vw_Invoices].[Amount] AS [Amount], 
     [SN_vw_Invoices].[CustomerID] AS [CustomerID], 
     [SN_vw_Invoices].[CustomerName] AS [CustomerName], 
-    [SN_vw_Invoices].[Comment] AS [Comment]
+    [SN_vw_Invoices].[Comment] AS [Comment], 
+    [SN_vw_Invoices].[IsPaid] AS [IsPaid]
     FROM [dbo].[SN_vw_Invoices] AS [SN_vw_Invoices]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SN_vw_Jobs" EntityType="Self.SN_vw_Jobs" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [SN_vw_Jobs].[JobID] AS [JobID], 
     [SN_vw_Jobs].[CustomerID] AS [CustomerID], 
     [SN_vw_Jobs].[ProviderID] AS [ProviderID], 
     [SN_vw_Jobs].[PackageID] AS [PackageID], 
@@ -2724,7 +2819,13 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
     [SN_vw_Jobs].[PackageName] AS [PackageName], 
     [SN_vw_Jobs].[PackageDescription] AS [PackageDescription], 
     [SN_vw_Jobs].[AreaID] AS [AreaID], 
-    [SN_vw_Jobs].[CategoryID] AS [CategoryID]
+    [SN_vw_Jobs].[CategoryID] AS [CategoryID], 
+    [SN_vw_Jobs].[InvoiceNo] AS [InvoiceNo], 
+    [SN_vw_Jobs].[InvoiceDescription] AS [InvoiceDescription], 
+    [SN_vw_Jobs].[InvoiceAmount] AS [InvoiceAmount], 
+    [SN_vw_Jobs].[JobID] AS [JobID], 
+    [SN_vw_Jobs].[IsPaid] AS [IsPaid], 
+    [SN_vw_Jobs].[AreaName] AS [AreaName]
     FROM [dbo].[SN_vw_Jobs] AS [SN_vw_Jobs]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SN_vw_Messages" EntityType="Self.SN_vw_Messages" store:Type="Views" store:Schema="dbo">
@@ -2739,6 +2840,18 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
     [SN_vw_Messages].[IsReade] AS [IsReade], 
     [SN_vw_Messages].[PackageID] AS [PackageID], 
     [SN_vw_Messages].[CustomerName] AS [CustomerName], 
+    [SN_vw_Messages].[Comment] AS [Comment], 
+    [SN_vw_Messages].[Amount] AS [Amount], 
+    [SN_vw_Messages].[Expr1] AS [Expr1], 
+    [SN_vw_Messages].[InvoiceID] AS [InvoiceID], 
+    [SN_vw_Messages].[IsAccepted] AS [IsAccepted], 
+    [SN_vw_Messages].[DateAccepted] AS [DateAccepted], 
+    [SN_vw_Messages].[ProviderComment] AS [ProviderComment], 
+    [SN_vw_Messages].[IsComplete] AS [IsComplete], 
+    [SN_vw_Messages].[IsCustomerComplete] AS [IsCustomerComplete], 
+    [SN_vw_Messages].[DateCustomerComplete] AS [DateCustomerComplete], 
+    [SN_vw_Messages].[DateCompleted] AS [DateCompleted], 
+    [SN_vw_Messages].[ProviderTypeID] AS [ProviderTypeID], 
     [SN_vw_Messages].[ProviderName] AS [ProviderName]
     FROM [dbo].[SN_vw_Messages] AS [SN_vw_Messages]</DefiningQuery>
           </EntitySet>
@@ -2754,7 +2867,8 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
     [SN_VW_Payments].[InvoiceID] AS [InvoiceID], 
     [SN_VW_Payments].[InvoiceNo] AS [InvoiceNo], 
     [SN_VW_Payments].[ProviderID] AS [ProviderID], 
-    [SN_VW_Payments].[Comment] AS [Comment]
+    [SN_VW_Payments].[Comment] AS [Comment], 
+    [SN_VW_Payments].[InvoiceDescription] AS [InvoiceDescription]
     FROM [dbo].[SN_VW_Payments] AS [SN_VW_Payments]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SN_vw_PostComments" EntityType="Self.SN_vw_PostComments" store:Type="Views" store:Schema="dbo">
@@ -2785,7 +2899,10 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
     [SN_vw_Proposals].[TimeLineInHours] AS [TimeLineInHours], 
     [SN_vw_Proposals].[FeeFrom] AS [FeeFrom], 
     [SN_vw_Proposals].[FeeTo] AS [FeeTo], 
-    [SN_vw_Proposals].[IsActive] AS [IsActive]
+    [SN_vw_Proposals].[IsActive] AS [IsActive], 
+    [SN_vw_Proposals].[IsAccepted] AS [IsAccepted], 
+    [SN_vw_Proposals].[DateAccepted] AS [DateAccepted], 
+    [SN_vw_Proposals].[ProviderTypeID] AS [ProviderTypeID]
     FROM [dbo].[SN_vw_Proposals] AS [SN_vw_Proposals]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SN_vw_ProviderAreas" EntityType="Self.SN_vw_ProviderAreas" store:Type="Views" store:Schema="dbo">
@@ -2942,37 +3059,6 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
     [SN_VW_ProviderPictures].[MiddleName] AS [MiddleName], 
     [SN_VW_ProviderPictures].[CompanyName] AS [CompanyName]
     FROM [dbo].[SN_VW_ProviderPictures] AS [SN_VW_ProviderPictures]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="SN_vw_ProviderProfile" EntityType="Self.SN_vw_ProviderProfile" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [SN_vw_ProviderProfile].[ProviderID] AS [ProviderID], 
-    [SN_vw_ProviderProfile].[ProviderTypeID] AS [ProviderTypeID], 
-    [SN_vw_ProviderProfile].[AccountTypeID] AS [AccountTypeID], 
-    [SN_vw_ProviderProfile].[Firstname] AS [Firstname], 
-    [SN_vw_ProviderProfile].[Lastname] AS [Lastname], 
-    [SN_vw_ProviderProfile].[MiddleName] AS [MiddleName], 
-    [SN_vw_ProviderProfile].[CompanyName] AS [CompanyName], 
-    [SN_vw_ProviderProfile].[Fullname] AS [Fullname], 
-    [SN_vw_ProviderProfile].[ProviderAddress] AS [ProviderAddress], 
-    [SN_vw_ProviderProfile].[City] AS [City], 
-    [SN_vw_ProviderProfile].[State] AS [State], 
-    [SN_vw_ProviderProfile].[CountryID] AS [CountryID], 
-    [SN_vw_ProviderProfile].[EmailAddress] AS [EmailAddress], 
-    [SN_vw_ProviderProfile].[ProviderPassword] AS [ProviderPassword], 
-    [SN_vw_ProviderProfile].[DateOfBirth] AS [DateOfBirth], 
-    [SN_vw_ProviderProfile].[DateCreated] AS [DateCreated], 
-    [SN_vw_ProviderProfile].[JobDescription] AS [JobDescription], 
-    [SN_vw_ProviderProfile].[KeyWord] AS [KeyWord], 
-    [SN_vw_ProviderProfile].[SkillName] AS [SkillName], 
-    [SN_vw_ProviderProfile].[CertificationName] AS [CertificationName], 
-    [SN_vw_ProviderProfile].[AreaName] AS [AreaName], 
-    [SN_vw_ProviderProfile].[AccountTypeName] AS [AccountTypeName], 
-    [SN_vw_ProviderProfile].[ProviderTypeName] AS [ProviderTypeName], 
-    [SN_vw_ProviderProfile].[AreaID] AS [AreaID], 
-    [SN_vw_ProviderProfile].[ProfilePictureURL] AS [ProfilePictureURL], 
-    [SN_vw_ProviderProfile].[Expr1] AS [Expr1], 
-    [SN_vw_ProviderProfile].[CategoryName] AS [CategoryName]
-    FROM [dbo].[SN_vw_ProviderProfile] AS [SN_vw_ProviderProfile]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="SN_VW_ProviderRating" EntityType="Self.SN_VW_ProviderRating" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3401,6 +3487,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Property Name="JobID" Type="Int32" />
           <Property Name="DateCreated" Type="DateTime" Precision="3" />
           <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IsPaid" Type="Boolean" />
         </EntityType>
         <EntityType Name="SN_Jobs">
           <Key>
@@ -4233,7 +4320,6 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySet Name="SN_vw_ProviderKeyWords" EntityType="SocialNetworkModel.SN_vw_ProviderKeyWords" />
           <EntitySet Name="SN_vw_ProviderPackages" EntityType="SocialNetworkModel.SN_vw_ProviderPackages" />
           <EntitySet Name="SN_VW_ProviderPictures" EntityType="SocialNetworkModel.SN_VW_ProviderPictures" />
-          <EntitySet Name="SN_vw_ProviderProfile" EntityType="SocialNetworkModel.SN_vw_ProviderProfile" />
           <EntitySet Name="SN_VW_ProviderRating" EntityType="SocialNetworkModel.SN_VW_ProviderRating" />
           <EntitySet Name="SN_vw_ProviderReceipt" EntityType="SocialNetworkModel.SN_vw_ProviderReceipt" />
           <EntitySet Name="SN_vw_Providers" EntityType="SocialNetworkModel.SN_vw_Providers" />
@@ -4256,6 +4342,31 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySet Name="SYS_VW_Users" EntityType="SocialNetworkModel.SYS_VW_Users" />
           <FunctionImport Name="SN_Category_FetchFirstX" ReturnType="Collection(SocialNetworkModel.SN_Category_FetchFirstX_Result)">
           <Parameter Name="Number" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="SN_CommissionRate" EntityType="SocialNetworkModel.SN_CommissionRate" />
+          <EntitySet Name="SN_ProviderWallet" EntityType="SocialNetworkModel.SN_ProviderWallet" />
+          <EntitySet Name="SN_vw_Commission" EntityType="SocialNetworkModel.SN_vw_Commission" />
+          <FunctionImport Name="SN_Jobs_FetchByType" ReturnType="Collection(SocialNetworkModel.SN_Jobs_FetchByType_Result)">
+            <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+            <Parameter Name="TypeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SN_Messages_FetchByCustomerIDMobile">
+          <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SN_Messages_FetchByProviderIDMobile" ReturnType="Collection(SocialNetworkModel.SN_Messages_FetchByProviderIDMobile_Result)">
+          <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SN_Payments_FetchByJobID" ReturnType="Collection(SocialNetworkModel.SN_Payments_FetchByJobID_Result)">
+          <Parameter Name="JobID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SN_Proposals_FetchByCustomerPostID" ReturnType="Collection(SocialNetworkModel.SN_Proposals_FetchByCustomerPostID_Result)">
+          <Parameter Name="CustomerPostID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SN_ProviderWallet_FetchByProviderID" ReturnType="Collection(SocialNetworkModel.SN_ProviderWallet_FetchByProviderID_Result)">
+          <Parameter Name="ProviderID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SN_ProviderWallet_FetchSummary" ReturnType="Collection(Decimal)">
+          <Parameter Name="ProviderID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="ProviderPictures_Fetch_Result">
@@ -5632,6 +5743,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Property Name="CustomerID" Type="Int32" />
           <Property Name="CustomerName" Type="String" MaxLength="152" FixedLength="false" Unicode="false" />
           <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsPaid" Type="Boolean" />
         </EntityType>
         <EntityType Name="SN_vw_Jobs">
           <Key>
@@ -5658,6 +5770,11 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Property Name="PackageDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="AreaID" Type="Int32" />
           <Property Name="CategoryID" Type="Int32" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IsPaid" Type="Boolean" />
+          <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SN_vw_Messages">
           <Key>
@@ -5673,7 +5790,19 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Property Name="IsReade" Type="Boolean" />
           <Property Name="PackageID" Type="Int32" />
           <Property Name="CustomerName" Type="String" MaxLength="152" FixedLength="false" Unicode="false" />
-          <Property Name="ProviderName" Type="String" MaxLength="203" FixedLength="false" Unicode="false" />
+          <Property Name="ProviderName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Expr1" Type="DateTime" Precision="3" />
+          <Property Name="InvoiceID" Type="Int32" />
+          <Property Name="IsAccepted" Type="Boolean" />
+          <Property Name="DateAccepted" Type="DateTime" Precision="3" />
+          <Property Name="ProviderComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsComplete" Type="Boolean" />
+          <Property Name="IsCustomerComplete" Type="Boolean" />
+          <Property Name="DateCustomerComplete" Type="DateTime" Precision="3" />
+          <Property Name="DateCompleted" Type="DateTime" Precision="3" />
+          <Property Name="ProviderTypeID" Type="Int32" />
         </EntityType>
         <EntityType Name="SN_VW_Payments">
           <Key>
@@ -5693,6 +5822,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ProviderID" Type="Int32" />
           <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SN_vw_PostComments">
           <Key>
@@ -5729,6 +5859,9 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Property Name="FeeFrom" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="FeeTo" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsAccepted" Type="Boolean" />
+          <Property Name="DateAccepted" Type="DateTime" Precision="3" />
+          <Property Name="ProviderTypeID" Type="Int32" />
         </EntityType>
         <EntityType Name="SN_vw_ProviderAreas">
           <Key>
@@ -5896,38 +6029,6 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="SN_vw_ProviderProfile">
-          <Key>
-            <PropertyRef Name="ProviderID" />
-          </Key>
-          <Property Name="ProviderID" Type="Int32" Nullable="false" />
-          <Property Name="ProviderTypeID" Type="Int32" />
-          <Property Name="AccountTypeID" Type="Int32" />
-          <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Fullname" Type="String" MaxLength="203" FixedLength="false" Unicode="false" />
-          <Property Name="ProviderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CountryID" Type="Int32" />
-          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ProviderPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
-          <Property Name="DateCreated" Type="DateTime" Precision="3" />
-          <Property Name="JobDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="KeyWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CertificationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="AccountTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ProviderTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="AreaID" Type="Int32" />
-          <Property Name="ProfilePictureURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Expr1" Type="Int32" />
-          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SN_VW_ProviderRating">
           <Key>
@@ -6256,6 +6357,133 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <Property Type="Boolean" Name="IsActive" Nullable="true" />
           <Property Type="String" Name="CategoryImageURL" Nullable="true" />
         </ComplexType>
+        <EntityType Name="SN_CommissionRate">
+          <Key>
+            <PropertyRef Name="CommissionRateID" />
+          </Key>
+          <Property Name="CommissionRateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProviderRate" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <Property Name="CustomerRate" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SN_ProviderWallet">
+          <Key>
+            <PropertyRef Name="ProviderWalletID" />
+          </Key>
+          <Property Name="ProviderWalletID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobID" Type="Int32" />
+          <Property Name="ProviderID" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SN_vw_Commission">
+          <Key>
+            <PropertyRef Name="CommissionID" />
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="CommissionID" Type="Int32" Nullable="false" />
+          <Property Name="JobID" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="ProviderID" Type="Int32" />
+          <Property Name="JobAmount" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <ComplexType Name="SN_Jobs_FetchByType_Result">
+          <Property Type="Int32" Name="CustomerID" Nullable="true" />
+          <Property Type="Int32" Name="ProviderID" Nullable="true" />
+          <Property Type="Int32" Name="PackageID" Nullable="true" />
+          <Property Type="String" Name="Comment" Nullable="true" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="InvoiceID" Nullable="true" />
+          <Property Type="Boolean" Name="IsAccepted" Nullable="true" />
+          <Property Type="DateTime" Name="DateAccepted" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ProviderComment" Nullable="true" />
+          <Property Type="Boolean" Name="IsComplete" Nullable="true" />
+          <Property Type="Boolean" Name="IsCustomerComplete" Nullable="true" />
+          <Property Type="DateTime" Name="DateCustomerComplete" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="203" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+          <Property Type="String" Name="PackageName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PackageDescription" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="AreaID" Nullable="true" />
+          <Property Type="Int32" Name="CategoryID" Nullable="true" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="InvoiceDescription" Nullable="true" MaxLength="250" />
+          <Property Type="Decimal" Name="InvoiceAmount" Nullable="true" Precision="19" />
+          <Property Type="Int32" Name="JobID" Nullable="false" />
+          <Property Type="Boolean" Name="IsPaid" Nullable="true" />
+          <Property Type="String" Name="AreaName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SN_Messages_FetchByProviderIDMobile_Result">
+          <Property Type="Int32" Name="MessageID" Nullable="false" />
+          <Property Type="Int32" Name="JobID" Nullable="true" />
+          <Property Type="Int32" Name="ProviderID" Nullable="true" />
+          <Property Type="Int32" Name="CustomerID" Nullable="true" />
+          <Property Type="String" Name="Message" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="SourceID" Nullable="true" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="IsReade" Nullable="true" />
+          <Property Type="Int32" Name="PackageID" Nullable="true" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+          <Property Type="String" Name="Comment" Nullable="true" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+          <Property Type="DateTime" Name="Expr1" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="InvoiceID" Nullable="true" />
+          <Property Type="Boolean" Name="IsAccepted" Nullable="true" />
+          <Property Type="DateTime" Name="DateAccepted" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ProviderComment" Nullable="true" />
+          <Property Type="Boolean" Name="IsComplete" Nullable="true" />
+          <Property Type="Boolean" Name="IsCustomerComplete" Nullable="true" />
+          <Property Type="DateTime" Name="DateCustomerComplete" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DateCompleted" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ProviderTypeID" Nullable="true" />
+          <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ProviderName1" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SN_Payments_FetchByJobID_Result">
+          <Property Type="Int32" Name="PaymentID" Nullable="false" />
+          <Property Type="String" Name="PaymentDescription" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+          <Property Type="Int32" Name="CustomerID" Nullable="false" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="152" />
+          <Property Type="Int32" Name="JobID" Nullable="false" />
+          <Property Type="Int32" Name="InvoiceID" Nullable="false" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="ProviderID" Nullable="true" />
+          <Property Type="String" Name="Comment" Nullable="true" />
+          <Property Type="String" Name="InvoiceDescription" Nullable="true" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="SN_Proposals_FetchByCustomerPostID_Result">
+          <Property Type="Int32" Name="ProposalID" Nullable="false" />
+          <Property Type="Int32" Name="CustomerPostID" Nullable="false" />
+          <Property Type="Int32" Name="ProviderID" Nullable="false" />
+          <Property Type="Int32" Name="ProposedTimeLine" Nullable="true" />
+          <Property Type="Decimal" Name="ProposedAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Remark" Nullable="true" />
+          <Property Type="DateTime" Name="DateaCreated" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="CustomerID" Nullable="true" />
+          <Property Type="String" Name="PostMessage" Nullable="true" />
+          <Property Type="Int32" Name="TimeLineInHours" Nullable="true" />
+          <Property Type="Decimal" Name="FeeFrom" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="FeeTo" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Boolean" Name="IsActive" Nullable="true" />
+          <Property Type="Boolean" Name="IsAccepted" Nullable="true" />
+          <Property Type="DateTime" Name="DateAccepted" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ProviderTypeID" Nullable="true" />
+          <Property Type="String" Name="ProviderName" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="SN_ProviderWallet_FetchByProviderID_Result">
+          <Property Type="Int32" Name="ProviderWalletID" Nullable="false" />
+          <Property Type="Int32" Name="JobID" Nullable="true" />
+          <Property Type="Int32" Name="ProviderID" Nullable="true" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="19" />
+          <Property Type="String" Name="PaymentType" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6412,6 +6640,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySetMapping Name="SN_Invoices">
             <EntityTypeMapping TypeName="SocialNetworkModel.SN_Invoices">
               <MappingFragment StoreEntitySet="SN_Invoices">
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
                 <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
                 <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
                 <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
@@ -8633,6 +8862,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySetMapping Name="SN_vw_Invoices">
             <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Invoices">
               <MappingFragment StoreEntitySet="SN_vw_Invoices">
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
                 <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
@@ -8648,6 +8878,11 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySetMapping Name="SN_vw_Jobs">
             <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Jobs">
               <MappingFragment StoreEntitySet="SN_vw_Jobs">
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+                <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+                <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="AreaID" ColumnName="AreaID" />
                 <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
@@ -8674,6 +8909,18 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySetMapping Name="SN_vw_Messages">
             <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Messages">
               <MappingFragment StoreEntitySet="SN_vw_Messages">
+                <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+                <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
+                <ScalarProperty Name="DateCustomerComplete" ColumnName="DateCustomerComplete" />
+                <ScalarProperty Name="IsCustomerComplete" ColumnName="IsCustomerComplete" />
+                <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+                <ScalarProperty Name="ProviderComment" ColumnName="ProviderComment" />
+                <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+                <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
                 <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
                 <ScalarProperty Name="PackageID" ColumnName="PackageID" />
@@ -8691,6 +8938,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySetMapping Name="SN_VW_Payments">
             <EntityTypeMapping TypeName="SocialNetworkModel.SN_VW_Payments">
               <MappingFragment StoreEntitySet="SN_VW_Payments">
+                <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
                 <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
                 <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
@@ -8724,6 +8972,9 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
           <EntitySetMapping Name="SN_vw_Proposals">
             <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Proposals">
               <MappingFragment StoreEntitySet="SN_vw_Proposals">
+                <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+                <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+                <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
                 <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
@@ -8912,39 +9163,6 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
                 <ScalarProperty Name="PictureDescription" ColumnName="PictureDescription" />
                 <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
                 <ScalarProperty Name="ProviderPictureID" ColumnName="ProviderPictureID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SN_vw_ProviderProfile">
-            <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_ProviderProfile">
-              <MappingFragment StoreEntitySet="SN_vw_ProviderProfile">
-                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
-                <ScalarProperty Name="ProfilePictureURL" ColumnName="ProfilePictureURL" />
-                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
-                <ScalarProperty Name="ProviderTypeName" ColumnName="ProviderTypeName" />
-                <ScalarProperty Name="AccountTypeName" ColumnName="AccountTypeName" />
-                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
-                <ScalarProperty Name="CertificationName" ColumnName="CertificationName" />
-                <ScalarProperty Name="SkillName" ColumnName="SkillName" />
-                <ScalarProperty Name="KeyWord" ColumnName="KeyWord" />
-                <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
-                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-                <ScalarProperty Name="ProviderPassword" ColumnName="ProviderPassword" />
-                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="ProviderAddress" ColumnName="ProviderAddress" />
-                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
-                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
-                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
-                <ScalarProperty Name="AccountTypeID" ColumnName="AccountTypeID" />
-                <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
-                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -9293,6 +9511,157 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="SN_CommissionRate">
+            <EntityTypeMapping TypeName="SocialNetworkModel.SN_CommissionRate">
+              <MappingFragment StoreEntitySet="SN_CommissionRate">
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="CustomerRate" ColumnName="CustomerRate" />
+                <ScalarProperty Name="ProviderRate" ColumnName="ProviderRate" />
+                <ScalarProperty Name="CommissionRateID" ColumnName="CommissionRateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SN_ProviderWallet">
+            <EntityTypeMapping TypeName="SocialNetworkModel.SN_ProviderWallet">
+              <MappingFragment StoreEntitySet="SN_ProviderWallet">
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="ProviderWalletID" ColumnName="ProviderWalletID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SN_vw_Commission">
+            <EntityTypeMapping TypeName="SocialNetworkModel.SN_vw_Commission">
+              <MappingFragment StoreEntitySet="SN_vw_Commission">
+                <ScalarProperty Name="JobAmount" ColumnName="JobAmount" />
+                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="CommissionID" ColumnName="CommissionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SN_Jobs_FetchByType" FunctionName="SocialNetworkModel.Store.SN_Jobs_FetchByType">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Jobs_FetchByType_Result">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+                <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+                <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+                <ScalarProperty Name="ProviderComment" ColumnName="ProviderComment" />
+                <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+                <ScalarProperty Name="IsCustomerComplete" ColumnName="IsCustomerComplete" />
+                <ScalarProperty Name="DateCustomerComplete" ColumnName="DateCustomerComplete" />
+                <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+                <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SN_Messages_FetchByCustomerIDMobile" FunctionName="SocialNetworkModel.Store.SN_Messages_FetchByCustomerIDMobile" />
+          <FunctionImportMapping FunctionImportName="SN_Messages_FetchByProviderIDMobile" FunctionName="SocialNetworkModel.Store.SN_Messages_FetchByProviderIDMobile">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Messages_FetchByProviderIDMobile_Result">
+                <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IsReade" ColumnName="IsReade" />
+                <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+                <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+                <ScalarProperty Name="ProviderComment" ColumnName="ProviderComment" />
+                <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+                <ScalarProperty Name="IsCustomerComplete" ColumnName="IsCustomerComplete" />
+                <ScalarProperty Name="DateCustomerComplete" ColumnName="DateCustomerComplete" />
+                <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
+                <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+                <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+                <ScalarProperty Name="ProviderName1" ColumnName="ProviderName1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SN_Payments_FetchByJobID" FunctionName="SocialNetworkModel.Store.SN_Payments_FetchByJobID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Payments_FetchByJobID_Result">
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="PaymentDescription" ColumnName="PaymentDescription" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="InvoiceDescription" ColumnName="InvoiceDescription" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SN_Proposals_FetchByCustomerPostID" FunctionName="SocialNetworkModel.Store.SN_Proposals_FetchByCustomerPostID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SocialNetworkModel.SN_Proposals_FetchByCustomerPostID_Result">
+                <ScalarProperty Name="ProposalID" ColumnName="ProposalID" />
+                <ScalarProperty Name="CustomerPostID" ColumnName="CustomerPostID" />
+                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+                <ScalarProperty Name="ProposedTimeLine" ColumnName="ProposedTimeLine" />
+                <ScalarProperty Name="ProposedAmount" ColumnName="ProposedAmount" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="DateaCreated" ColumnName="DateaCreated" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="PostMessage" ColumnName="PostMessage" />
+                <ScalarProperty Name="TimeLineInHours" ColumnName="TimeLineInHours" />
+                <ScalarProperty Name="FeeFrom" ColumnName="FeeFrom" />
+                <ScalarProperty Name="FeeTo" ColumnName="FeeTo" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
+                <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+                <ScalarProperty Name="ProviderTypeID" ColumnName="ProviderTypeID" />
+                <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SN_ProviderWallet_FetchByProviderID" FunctionName="SocialNetworkModel.Store.SN_ProviderWallet_FetchByProviderID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SocialNetworkModel.SN_ProviderWallet_FetchByProviderID_Result">
+                <ScalarProperty Name="ProviderWalletID" ColumnName="ProviderWalletID" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SN_ProviderWallet_FetchSummary" FunctionName="SocialNetworkModel.Store.SN_ProviderWallet_FetchSummary" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -9308,7 +9677,7 @@ warning 6002: The table/view 'SocialNetwork.dbo.SYS_VW_Users' does not have a pr
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

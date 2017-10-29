@@ -76,7 +76,6 @@
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderKeyWords" Width="1.75" PointX="23.75" PointY="13.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderPackages" Width="1.5" PointX="23.75" PointY="17.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderPictures" Width="1.75" PointX="23.375" PointY="22.625" />
-        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderProfile" Width="2.125" PointX="0.625" PointY="23.5" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_VW_ProviderRating" Width="2.125" PointX="8.125" PointY="23.5" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_ProviderReceipt" Width="1.875" PointX="10.75" PointY="24.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_Providers" Width="1.5" PointX="25.75" PointY="0.75" />
@@ -97,6 +96,9 @@
         <EntityTypeShape EntityType="SocialNetworkModel.SYS_VW_Degrees" Width="1.5" PointX="27.75" PointY="0.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SYS_vw_Roles" Width="1.5" PointX="27.75" PointY="3.75" />
         <EntityTypeShape EntityType="SocialNetworkModel.SYS_VW_Users" Width="1.5" PointX="27.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_CommissionRate" Width="1.5" PointX="7.375" PointY="27.75" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_ProviderWallet" Width="1.5" PointX="9.375" PointY="27.75" />
+        <EntityTypeShape EntityType="SocialNetworkModel.SN_vw_Commission" Width="1.5" PointX="28.375" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
